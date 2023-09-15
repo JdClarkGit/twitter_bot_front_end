@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+// @jsxImportSource @vite/client
+import React, { useState, createContext } from "react";
 import { FiEyeOff, FiEye } from "react-icons/fi";
 import SignUpFormBtn from "../../components/SignUpFormBtn";
-import { createContext } from "react";
 
-const Context = createContext();
+// const Context = createContext();
 
 export default function SignUpPage() {
   const [password, setPassword] = useState("");
