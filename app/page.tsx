@@ -11,9 +11,6 @@ export default function Home() {
         <div className="flex justify-center h-1/2 w-full mb-4">
           <BaseDemoVideo />
         </div>
-        <div className="h-1/2 w-full text-center mt-4">
-          <BaseDemoVideoText />
-        </div>
       </div>
       <div className="flex flex-col justify-center items-center w-1/2 h-full cursor-default">
         <TweetBotHeader />

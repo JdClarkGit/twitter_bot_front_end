@@ -14,6 +14,13 @@ export default function BaseDemoVideo() {
           <source src="https://youtu.be/-SB4tJ5zmY4" type="video/mp4" />
           <p className="text-white text-3xl">Demo Video</p>
         </video>
+        <div className="w-full text-center my-8">
+          <p className="mb-2 font-bold text-5xl whitespace-nowrap">
+            Welcome to SocialSkyrocket!
+          </p>
+          <p className="mb-2 text-2xl">Build Your Audience Effortlessly</p>
+          <h3 className="text-md">Social Media Automation Demo</h3>
+        </div>
       </div>
     </div>
   );
