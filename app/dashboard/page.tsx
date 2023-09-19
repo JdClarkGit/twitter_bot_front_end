@@ -23,8 +23,6 @@ export default function DashboardPage() {
                 <div className="cursor-pointer w-[100px] h-12 bg-blue-500 rounded-lg shadow-md transition-all duration-200 transform active:scale-90 flex items-center justify-center">
                   {item.alt}
                 </div>
-
-                {/* <img className="text-white" src={item.src} alt={item.alt} /> */}
               </Link>
             ) : (
               <button
@@ -32,7 +30,6 @@ export default function DashboardPage() {
                 className="cursor-pointer w-[100px] h-12 bg-blue-500 rounded-lg shadow-md transition-all duration-200 transform active:scale-90 items-center justify-center"
               >
                 {item.alt}
-                {/* <img className="text-white" src={item.src} alt={item.alt} /> */}
               </button>
             )}
           </div>
