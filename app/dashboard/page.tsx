@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export default function DashboardPage() {
   const menuItems = [
-<<<<<<< HEAD
     { alt: "Home", src: "/path/to/notes-logo.png", onClick: null },
     { alt: "Create", src: "/path/to/image.png", href: "/create" },
     { alt: "Analytics", src: "/path/to/image.png", href: "/analytics" },
@@ -12,15 +11,6 @@ export default function DashboardPage() {
     { alt: "Profile", src: "/path/to/notes-logo.png", href: "/profile" },
     { alt: "Settings", src: "/path/to/image.png", href: "/settings" },
     { alt: "Log Out", src: "/path/to/image.png", href: "/" },
-=======
-    { alt: "Home", src: "/path/to/image.png", href: "/" },
-    { alt: "Create", src: "/path/to/image.png", href: "/create" },
-    { alt: "Analytics", src: "/path/to/notes-logo.png", onClick: null },
-    { alt: "Notes", src: "/path/to/notes-logo.png", onClick: null },
-    { alt: "Profile", src: "/path/to/notes-logo.png", onClick: null },
-    { alt: "Settings", src: "/path/to/notes-logo.png", onClick: null },
-    { alt: "Log Out", src: "/path/to/notes-logo.png", onClick: null },
->>>>>>> origin/main
   ];
 
   return (
@@ -33,11 +23,6 @@ export default function DashboardPage() {
                 <div className="cursor-pointer w-[100px] h-12 bg-blue-500 rounded-lg shadow-md transition-all duration-200 transform active:scale-90 flex items-center justify-center">
                   {item.alt}
                 </div>
-<<<<<<< HEAD
-=======
-
-                {/* <img className="text-white" src={item.src} alt={item.alt} /> */}
->>>>>>> origin/main
               </Link>
             ) : (
               <button
@@ -45,10 +30,6 @@ export default function DashboardPage() {
                 className="cursor-pointer w-[100px] h-12 bg-blue-500 rounded-lg shadow-md transition-all duration-200 transform active:scale-90 items-center justify-center"
               >
                 {item.alt}
-<<<<<<< HEAD
-=======
-                {/* <img className="text-white" src={item.src} alt={item.alt} /> */}
->>>>>>> origin/main
               </button>
             )}
           </div>
