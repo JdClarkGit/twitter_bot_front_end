@@ -83,6 +83,7 @@ export default function DashboardPage() {
       src: "/path/to/image.png",
       onClick: () => setActivePage("HistoryComparison"),
     },
+    { alt: "Go Back", src: "/path/to/image.png", href: "/dashboard" },
   ];
   const commonClasses =
     "w-auto px-4 mt-2 h-12 bg-gray-600 hover:bg-blue-500 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-95 flex items-center justify-center border border-blue-600";

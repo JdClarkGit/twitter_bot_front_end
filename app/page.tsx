@@ -7,7 +7,7 @@ import LogInBtn from "@/components/LogInBtn";
 export default function Home() {
   return (
     <div className="flex w-full h-screen text-sm cursor-pointer">
-      <div className="bg-[#7C0002] flex flex-col justify-center items-center w-1/2 h-full">
+      <div className="bg-[#3B81F6] flex flex-col justify-center items-center w-1/2 h-full">
         <div className="flex justify-center h-1/2 w-full mb-4">
           <BaseDemoVideo />
         </div>
