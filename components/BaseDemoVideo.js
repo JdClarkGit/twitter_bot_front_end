@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BaseDemoVideo() {
   return (
-    <div className="w-[700px] h-[450px] flex justify-center items-center bg-[#7C0002] text-white">
+    <div className="w-[700px] h-[450px] flex justify-center items-center bg-[#00007C] text-white">
       <div
         className="w-full h-full rounded-lg shadow-1l p-2"
         style={{
