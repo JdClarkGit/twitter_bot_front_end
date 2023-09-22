@@ -10,15 +10,15 @@ export default function DashboardOverview() {
       </div>
 
       <div className="flex space-x-8">
-        <button className="cursor-pointer w-[200px] h-16 bg-blue-500 text-white rounded-lg shadow-md transition-all duration-200 transform active:scale-90 flex items-center justify-center">
+        <button className="cursor-pointer w-[200px] h-16 bg-blue-500 text-white hover:bg-white hover:text-blue-500 rounded-lg shadow-md transition-all duration-200 transform active:scale-90 flex items-center justify-center">
           Total Posts
         </button>
 
-        <button className="cursor-pointer w-[200px] h-16 bg-blue-500 text-white rounded-lg shadow-md transition-all duration-200 transform active:scale-90 flex items-center justify-center">
+        <button className="cursor-pointer hover:bg-white hover:text-blue-500 w-[200px] h-16 bg-blue-500 text-white rounded-lg shadow-md transition-all duration-200 transform active:scale-90 flex items-center justify-center">
           Engagement Metrics
         </button>
 
-        <button className="cursor-pointer w-[200px] h-16 bg-blue-500 text-white rounded-lg shadow-md transition-all duration-200 transform active:scale-90 flex items-center justify-center">
+        <button className="cursor-pointer hover:bg-white hover:text-blue-500 w-[200px] h-16 bg-blue-500 text-white rounded-lg shadow-md transition-all duration-200 transform active:scale-90 flex items-center justify-center">
           Top-performing Posts
         </button>
       </div>
