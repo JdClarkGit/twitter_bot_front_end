@@ -1,15 +1,14 @@
 "use client";
 import React, { useState } from "react";
+import LogInBtn from "@/components/LogInBtn";
 
 export default function TweetBotHeader() {
   return (
-    <div className="text-right flex flex-col items-end">
-      <h1 className="text-[30px] my-2">SocialSkyrocket</h1>
-      <div className="w-1/2">
-        <h3 className="text-[17px] italic">
-          Build your entire social media brand and audience autonomously
-        </h3>
-      </div>
+    <div className="text-right flex flex-row items-end">
+      <h1 className="text-[30px] my-2 text-[#3B81F6]">SocialSkyrocket</h1>
+      {/* <LogInBtn textVal="Log In" />
+      <LogInBtn textVal="Sign Up" />
+      <LogInBtn textVal="Contact Us" /> */}
     </div>
   );
 }
