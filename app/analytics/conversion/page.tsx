@@ -1,4 +1,5 @@
 import React from "react";
+import { Bar, Line, Pie, Doughnut, Radar, PolarArea } from "react-chartjs-2";
 
 export default function ConversionRate() {
   return (

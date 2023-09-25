@@ -6,7 +6,7 @@ export default function DashboardPage() {
   const menuItems = [
     { alt: "Home", src: "/path/to/notes-logo.png", onClick: null },
     { alt: "Create", src: "/path/to/image.png", href: "/create" },
-    { alt: "Analytics", src: "/path/to/image.png", href: "/analytics" },
+    // { alt: "Analytics", src: "/path/to/image.png", href: "/analytics" },
     { alt: "Notes", src: "/path/to/notes-logo.png", href: "/notes" },
     { alt: "Profile", src: "/path/to/notes-logo.png", href: "/profile" },
     { alt: "Settings", src: "/path/to/image.png", href: "/settings" },
@@ -14,20 +14,30 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="flex h-screen w-screen bg-white">
-      <div className=" flex flex-col justify-between h-screen w-[110px]  border-gray-800 border-r-2 bg-gray-200 py-5">
+    <div className="flex flex-row h-screen w-screen bg-white">
+      <div className=" flex flex-row justify-between h-screen w-full  border-gray-800 border-r-2 bg-gray-200 py-5">
         {menuItems.map((item, index) => (
           <div key={index} className="w-fit">
             {item.href ? (
               <Link href={item.href}>
-                <div className="cursor-pointer w-[100px] h-12 bg-blue-500 rounded-lg shadow-md transition-all duration-200 transform active:scale-90 flex items-center justify-center">
+                <div
+                  className="inline-flex items-center 
+      justify-center text-sm  
+      font-medium transition-colors 
+      focus-visible:outline-none  focus-visible:ring-2  focus-visible:ring-ring focus-visible:ring-offset-2  disabled:opacity-50  disabled:pointer-events-none  ring-offset-background
+       text-white h-12 py-4 px-8  
+       bg-[#3B81F6] rounded-full hover:bg-white hover:text-[#3B81F6]"
+                >
                   {item.alt}
                 </div>
               </Link>
             ) : (
               <button
                 onClick={() => item.onClick}
-                className="cursor-pointer w-[100px] h-12 bg-blue-500 rounded-lg shadow-md transition-all duration-200 transform active:scale-90 items-center justify-center"
+                className="inline-flex items-center 
+                justify-center text-sm  
+                font-medium transition-colors 
+                focus-visible:outline-none  focus-visible:ring-2  focus-visible:ring-ring focus-visible:ring-offset-2  disabled:opacity-50  disabled:pointer-events-none  ring-offset-background text-white h-12 py-4 px-8  bg-[#3B81F6] rounded-full hover:bg-white hover:text-[#3B81F6]"
               >
                 {item.alt}
               </button>

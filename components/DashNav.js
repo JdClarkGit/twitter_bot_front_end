@@ -14,7 +14,7 @@ export default function DashNav() {
   return (
     <>
       {location.pathname !== "/" && (
-        <div className="flex justify-between">
+        <div className="flex justify-between border-red-500">
           <div className="flex flex-row">
             <BaseCreateBtn />
             <Link
