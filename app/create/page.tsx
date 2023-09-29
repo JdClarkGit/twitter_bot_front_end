@@ -38,6 +38,19 @@ export default function CreateContent() {
           >
             Thread
           </button>
+          <button
+            className="cursor-pointer 
+          w-[100px] h-8 bg-blue-500 text-white 
+          rounded-lg shadow-md 
+          transition-all duration-200 
+          transform active:scale-90 flex items-center 
+          justify-center hover:bg-white hover:text-[#3B81F6]"
+          >
+            <div className="mr-2">
+              <span aria-hidden="true">←</span>
+            </div>
+            Go Back
+          </button>
         </div>
       )}
 
