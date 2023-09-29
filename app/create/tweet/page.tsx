@@ -34,7 +34,7 @@ export default function PromptTweet() {
           bg-[#3B81F6] rounded-full hover:bg-white hover:text-[#3B81F6]"
         onClick={handleTweet}
       >
-        Write Tweet For Me!
+        Write A Tweet For Me!
       </button>
       {tweet && <p>You typed: {tweet}</p>}
     </div>
