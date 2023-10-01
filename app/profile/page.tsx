@@ -26,7 +26,7 @@ const ProfilePlaceholder = ({ size = 50 }) => {
 function SettingsComponent() {
   return (
     <div className="mt-5 bg-[#1c2029] rounded-md w-3/4 flex flex-col gap-4 p-4 items-start space-y-4 text-center">
-      <h2 className="text-3xl text-[#e0e0e0] text-center">Settings</h2>
+      <h2 className="text-3xl text-[#e0e0e0] text-center">Profile</h2>
 
       <button
         className="inline-flex items-center
@@ -142,7 +142,7 @@ export default function ProfilePage() {
   return (
     <div className="flex bg-[#1c2029] min-h-screen">
       {/* Sidebar */}
-      <div className="w-64 bg-[#1c2029] p-4">
+      <div className="w-64 bg-[#1c2029] p-4 text-center">
         <SettingsComponent />
       </div>
 
