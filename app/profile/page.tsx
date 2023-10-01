@@ -147,14 +147,14 @@ export default function ProfilePage() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center border border-gray-200 shadow-sm rounded p-4">
+      <div className="bg-[#1c2029] flex-1 flex flex-col items-center border border-gray-200 shadow-sm rounded p-4">
         <ProfilePlaceholder size={100} />
 
         {/* Account Info */}
         <div className="mt-5 bg-[#1c2029] border border-gray-300 shadow-sm rounded-md p-4 w-3/4 flex flex-col gap-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-[#e0e0e0]">Account Info</h1>
-            <button className="bg-orange-200 p-2 rounded-md hover:bg-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400">
+            <button className="bg-orange-200 p-2 text-black rounded-md hover:bg-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400">
               <FontAwesomeIcon
                 icon={faPencilAlt}
                 className="text-lg"
@@ -210,74 +210,17 @@ export default function ProfilePage() {
           </div>
 
           <div className="mt-2">
-            <button className="bg-blue-200 py-2 px-4 rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
-              Save Changes
-            </button>
-          </div>
-        </div>
-
-        {/* Billing Info */}
-        <div className="mt-5 bg-[#1c2029] border border-gray-300 shadow-sm rounded-md p-4 w-3/4 flex flex-col gap-4">
-          <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-[#e0e0e0]">Billing Info</h1>
-            <button className="bg-orange-200 p-2 rounded-md hover:bg-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400">
-              <FontAwesomeIcon
-                icon={faPencilAlt}
-                className="text-lg"
-                size="xs"
-              />{" "}
-              Edit
-            </button>
-          </div>
-
-          <CreditCardInput />
-
-          <div className="flex flex-row gap-2 items-center">
-            <h2 className="font-semibold text-[#e0e0e0] w-32">Address</h2>
-            <input
-              type="text"
-              className="w-full p-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600"
-              placeholder="Enter Address"
-            />
-          </div>
-
-          <div className="flex flex-row gap-2 items-center">
-            <h2 className="font-semibold text-[#e0e0e0] w-32">City</h2>
-            <input
-              type="text"
-              className="w-full p-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600"
-              placeholder="Enter City"
-            />
-          </div>
-
-          <div className="flex flex-row gap-2 items-center">
-            <h2 className="font-semibold text-[#e0e0e0] w-32">Country</h2>
-            <input
-              type="text"
-              className="w-full p-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600"
-              placeholder="Enter Country"
-            />
-          </div>
-
-          <div className="flex flex-row gap-2 items-center">
-            <h2 className="font-semibold text-[#e0e0e0] w-32">Zip Code</h2>
-            <input
-              type="text"
-              className="w-full p-2 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600"
-              placeholder="Enter Zip Code"
-            />
-          </div>
-
-          <div className="mt-2 flex gap-2">
-            <button className="bg-blue-200 py-2 px-4 rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
-              Save Changes
-            </button>
-            <button className="bg-green-200 py-2 px-4 rounded-md hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-green-400">
-              Change Membership
-            </button>
-            <button className="bg-red-200 py-2 px-4 rounded-md hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-400">
-              Cancel Membership
-            </button>
+            <div className="mt-2 flex gap-2">
+              <button className="bg-blue-200 text-black py-2 px-4 rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                Save Changes
+              </button>
+              <button className="bg-green-200 text-black py-2 px-4 rounded-md hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-green-400">
+                Change Membership
+              </button>
+              <button className="bg-red-200 text-black py-2 px-4 rounded-md hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-400">
+                Cancel Membership
+              </button>
+            </div>
           </div>
         </div>
       </div>
