@@ -43,10 +43,8 @@ export default function SettingsPage() {
   return (
     <div className="settings-page flex flex-row bg-gray-900 h-screen">
       {/* Sidebar */}
-      <aside className="sidebar w-1/5 bg-gray-800 p-6 flex flex-col gap-4">
-        <h2 className="mt-5 bg-[#1c2029] rounded-md w-3/4 flex flex-col gap-4 p-4 items-start space-y-4 text-center">
-          Settings
-        </h2>
+      <aside className="sidebar w-1/5 bg-[#111827] p-6 flex flex-col gap-4 text-center">
+        <h2 className="text-3xl text-[#e0e0e0] text-center">Settings</h2>
         <SettingsButton label="Profile" />
         <SettingsButton label="Notifications" />
         <SettingsButton label="Security" />
@@ -55,8 +53,8 @@ export default function SettingsPage() {
       </aside>
 
       {/* Main Content */}
-      <main className="content flex-1 p-6">
-        <section className="billing-section">
+      <main className="content flex-1 p-6 border border-gray-200">
+        <section className="billing-section border border-gray-300">
           <div className="bg-gray-700 p-6 rounded-md">
             <div className="flex justify-between items-center mb-4">
               <h1 className="text-2xl font-bold text-white">Billing Info</h1>
@@ -86,13 +84,13 @@ export default function SettingsPage() {
               Update Billing
             </button>
             <div className="mt-2 flex gap-2">
-              <button className="bg-blue-200 py-2 px-4 rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-black">
+              <button className="bg-blue-200 hover:bg-white hover:text-blue-600 text-black py-2 px-4 rounded-xl  focus:outline-none focus:ring-2 focus:ring-blue-400">
                 Save Changes
               </button>
-              <button className="bg-green-200 py-2 px-4 rounded-md hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-black">
+              <button className="bg-green-200 hover:bg-white hover:text-green-600 text-black py-2 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400">
                 Change Membership
               </button>
-              <button className="bg-red-200 py-2 px-4 rounded-md hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-400 text-black">
+              <button className="bg-red-200 hover:bg-white hover:text-red-600 text-black py-2 px-4 rounded-xl  focus:outline-none focus:ring-2 focus:ring-red-400">
                 Cancel Membership
               </button>
             </div>

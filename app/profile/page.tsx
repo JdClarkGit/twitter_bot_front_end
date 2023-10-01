@@ -104,7 +104,7 @@ function CreditCardInput() {
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 h-screen">
       <form>
         <label>
           <h2 className="font-semibold text-[#e0e0e0]">Card Number:</h2>
@@ -140,7 +140,7 @@ export default function ProfilePage() {
   // placeholder for fetching data from the database
 
   return (
-    <div className="flex bg-[#1c2029]">
+    <div className="flex bg-[#1c2029] min-h-screen">
       {/* Sidebar */}
       <div className="w-64 bg-[#1c2029] p-4">
         <SettingsComponent />
@@ -151,7 +151,7 @@ export default function ProfilePage() {
         <ProfilePlaceholder size={100} />
 
         {/* Account Info */}
-        <div className="mt-5 bg-[#1c2029] border border-gray-300 shadow-sm rounded-md p-4 w-3/4 flex flex-col gap-4">
+        <div className="mt-5 bg-[#374151] border border-gray-300 shadow-sm rounded-md p-4 w-3/4 flex flex-col gap-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-[#e0e0e0]">Account Info</h1>
             <button className="bg-orange-200 p-2 text-black rounded-md hover:bg-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400">
@@ -211,13 +211,13 @@ export default function ProfilePage() {
 
           <div className="mt-2">
             <div className="mt-2 flex gap-2">
-              <button className="bg-blue-200 text-black py-2 px-4 rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+              <button className="bg-blue-200 hover:bg-white hover:text-blue-600 text-black py-2 px-4 rounded-xl  focus:outline-none focus:ring-2 focus:ring-blue-400">
                 Save Changes
               </button>
-              <button className="bg-green-200 text-black py-2 px-4 rounded-md hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <button className="bg-green-200 hover:bg-white hover:text-green-600 text-black py-2 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400">
                 Change Membership
               </button>
-              <button className="bg-red-200 text-black py-2 px-4 rounded-md hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-400">
+              <button className="bg-red-200 hover:bg-white hover:text-red-600 text-black py-2 px-4 rounded-xl  focus:outline-none focus:ring-2 focus:ring-red-400">
                 Cancel Membership
               </button>
             </div>
