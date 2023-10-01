@@ -46,9 +46,7 @@ export default function CreateContent() {
           transform active:scale-90 flex items-center 
           justify-center hover:bg-white hover:text-[#3B81F6]"
           >
-            <div className="mr-2">
-              <span aria-hidden="true">←</span>
-            </div>
+            <div className="mr-2"></div>
             Go Back
           </button>
         </div>
