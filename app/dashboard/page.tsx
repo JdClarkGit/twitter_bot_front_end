@@ -94,13 +94,13 @@ export default function DashboardPage() {
             <h3 className="text-xl mb-4">Quick Stats</h3>
             {/* ... some stats ... */}
           </div>
+          <div className="p-4 w-1/3 border rounded shadow text-center">
+            <Link href="/faq">FAQ</Link>
+            {/* ... other links ... */}
+          </div>
         </div>
 
         {/* Footer Area */}
-        <div className="mt-6 text-center align-end">
-          <Link href="/faq">FAQ</Link>
-          {/* ... other links ... */}
-        </div>
       </div>
     </div>
   );
