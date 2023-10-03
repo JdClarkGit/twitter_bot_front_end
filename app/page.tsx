@@ -12,6 +12,7 @@ export default function Home() {
           <LogInBtn textVal="Log In" />
           <LogInBtn textVal="Sign Up" />
           <LogInBtn textVal="Contact Us" />
+          {/* <DemoButton /> */}
         </div>
       </div>
 
@@ -19,6 +20,7 @@ export default function Home() {
       <div className="flex-grow flex items-center justify-center">
         <div className="w-1/2">
           <BaseDemoVideo />
+          {/* <DemoButton /> */}
         </div>
       </div>
     </div>
