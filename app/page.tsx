@@ -25,8 +25,8 @@ export default function Home() {
       </div>
 
       {/* Footer Section */}
-      <footer className="w-full bg-blue-500 font-bold text-white tracking-tight text-center p-7">
-        <p className="text-4xl tracking-tight">
+      <footer className="w-full bg-blue-500 font-bold text-white tracking-tight text-center p-4">
+        <p className="text-3xl tracking-tight">
           In the vast tapestry of the social media universe, patterns emerge...
           We've decoded that rhythm. Enter SocialSkyrocket: your autopilot for
           tweets, threads, and brand brilliance. Dive deeper, post efficiently,
