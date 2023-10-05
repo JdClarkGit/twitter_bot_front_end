@@ -11,47 +11,51 @@ export default function PromptThread() {
     }
   };
 
-  return (
-    <div className="flex flex-col h-screen justify-center items-center space-y-8">
-      <p className="text-3xl">What would you like your thread to be about?</p>
+  const handleGoBack = () => {
+    console.log("Going back...");
+  };
 
-      {/* Input Box */}
+  return (
+    <div className="flex flex-col h-96 justify-center items-center space-y-8 bg-gray-50 shadow-2xl rounded-lg">
+      <p className="text-3xl font-semibold text-gray-800">
+        What would you like your thread to be about?
+      </p>
+
       <div className="w-full max-w-xl text-black">
         <input
           type="text"
-          placeholder="Give me an idea and I can write it for you..."
-          className="w-full p-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+          placeholder="Give me an idea and how you'd like it written..."
+          className="w-full p-4 text-lg rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 focus:outline-none shadow-md transition-shadow duration-300 ease-in-out"
         />
       </div>
 
       <button
         className="inline-flex items-center
-          justify-center text-sm
-          font-medium transition-colors
-          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background
-          text-white h-12 py-4 px-8
-          bg-[#3B81F6] rounded-full hover:bg-white hover:text-[#3B81F6]"
+          justify-center text-lg
+          font-medium
+          focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none 
+          text-white h-12 py-2 px-6
+          bg-blue-500 rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transition-shadow duration-300 ease-in-out"
         onClick={handleThread}
       >
         Write My Thread!
       </button>
 
-      {/* Note: Uncomment if you need the back button.
-      <Link href="/create" passHref>
-        <button
-          className="inline-flex items-center
-        justify-center text-sm
-        font-medium transition-colors
-        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background
-        text-white h-12 py-4 px-8
-        bg-[#3B81F6] rounded-full hover:bg-white hover:text-[#3B81F6]"
-        >
-          Back
-        </button>
-      </Link>
-      */}
+      <button
+        className="inline-flex items-center
+          justify-center text-lg
+          font-medium
+          focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none 
+          text-white h-12 py-2 px-6
+          bg-blue-500 rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transition-shadow duration-300 ease-in-out"
+        onClick={handleGoBack}
+      >
+        Go Back
+      </button>
 
-      {thread && <p className="mt-8">You typed: {thread}</p>}
+      {thread && (
+        <p className="mt-8 text-xl text-gray-700">You typed: {thread}</p>
+      )}
     </div>
   );
 }
