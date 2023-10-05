@@ -29,8 +29,8 @@ export default function DashboardPage() {
                   focus-visible:outline-none focus-visible:ring-2
                   focus-visible:ring-offset-2 disabled:opacity-50
                   disabled:pointer-events-none ring-offset-background
-                  text-white h-12 py-4 px-8 bg-[#3B81F6] rounded-full
-                  hover:bg-white hover:text-[#3B81F6]"
+                  text-white h-12 py-4 px-8 bg-blue-600 rounded-full
+                  hover:bg-gray-800"
                 >
                   {item.alt}
                 </div>
@@ -43,8 +43,8 @@ export default function DashboardPage() {
                   focus-visible:outline-none focus-visible:ring-2
                   focus-visible:ring-offset-2 disabled:opacity-50
                   disabled:pointer-events-none ring-offset-background
-                  text-white h-12 py-4 px-8 bg-[#3B81F6] rounded-full
-                  hover:bg-white hover:text-[#3B81F6]"
+                  text-white h-12 py-4 px-8 bg-blue-600 rounded-full
+                  hover:bg-gray-800"
               >
                 {item.alt}
               </button>
