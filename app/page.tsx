@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 
 import BottomCta from '../components/landing/bottomCta'
+import LandingPageFooter from '../components/landing/footer';
 
 export default function Home() {
   return (
@@ -190,6 +191,8 @@ export default function Home() {
       >
         <BottomCta />
       </Container>
+
+      <LandingPageFooter/>
     </div>
   );
 }
