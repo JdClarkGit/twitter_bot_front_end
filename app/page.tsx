@@ -14,8 +14,10 @@ import {
   SimpleGrid,
   Text,
   Spacer,
-  Divider,
+  Divider, Image, Center, Button, Stack, Icon, createIcon
 } from "@chakra-ui/react";
+
+import BottomCta from '../components/landing/bottomCta'
 
 export default function Home() {
   return (
@@ -32,7 +34,7 @@ export default function Home() {
       </div>
 
       <Container
-        minH={"300px"}
+        minH={"400px"}
         maxW={"container.xl"}
         paddingBottom={"20px"}
         borderTop="1px solid black"
@@ -184,21 +186,9 @@ export default function Home() {
       </Container>
 
       <Container
-        minH={"300px"}
         maxW={"container.xl"}
-        paddingBottom={"20px"}
-        borderTop="1px solid black"
-        borderBottom="1px solid black"
       >
-        <Text
-          fontSize="3xl"
-          color="black"
-          lineHeight="tall"
-          textAlign="center"
-          as="b"
-        >
-          TODO: Bottom CTA
-        </Text>
+        <BottomCta />
       </Container>
     </div>
   );
