@@ -19,27 +19,17 @@ import {
 
 import BottomCta from '../components/landing/bottomCta'
 import LandingPageFooter from '../components/landing/footer';
+import Navbar from '../components/landing/navbar'
 
 export default function Home() {
   return (
     <div className="w-full h-screen text-sm bg-white flex flex-col justify-start items-center">
-      {/* Top Section - TweetBotHeader and Buttons */}
-      <div className="w-full flex justify-between items-center px-4 py-2">
-        <TweetBotHeader />
-        <div className="flex flex-row space-x-4">
-          <LogInBtn textVal="Log In" />
-          <LogInBtn textVal="Sign Up" />
-          <LogInBtn textVal="Contact Us" />
-          {/* <DemoButton /> */}
-        </div>
-      </div>
+      <Navbar />
 
       <Container
         minH={"400px"}
         maxW={"container.xl"}
         paddingBottom={"20px"}
-        borderTop="1px solid black"
-        borderBottom="1px solid black"
       >
         <Text
           fontSize="3xl"
