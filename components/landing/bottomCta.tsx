@@ -46,11 +46,12 @@ export default function CallToActionWithAnnotation() {
           position={"relative"}
         >
           <Button
-            colorScheme={"black"}
-            bg={"green.400"}
+            color="black"
+            bg="green.400"
             px={6}
             _hover={{
               bg: "green.500",
+              color: "white",
             }}
           >
             Get Started
