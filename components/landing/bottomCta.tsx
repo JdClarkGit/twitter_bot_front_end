@@ -24,8 +24,9 @@ export default function CallToActionWithAnnotation() {
         <Heading
           fontWeight={600}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"110%"}
+          lineHeight={"100%"}
         >
+          <br />
           Ready to start growing <br />
           <Text as={"span"} color={"green.400"}>
             your audience? 🤑
@@ -45,7 +46,7 @@ export default function CallToActionWithAnnotation() {
           position={"relative"}
         >
           <Button
-            colorScheme={"green"}
+            colorScheme={"black"}
             bg={"green.400"}
             px={6}
             _hover={{
