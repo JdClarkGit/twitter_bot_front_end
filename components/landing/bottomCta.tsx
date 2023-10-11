@@ -18,13 +18,13 @@ export default function CallToActionWithAnnotation() {
       <Stack
         as={Box}
         textAlign={"center"}
-        spacing={{ base: 8, md: 14 }}
-        py={{ base: 20, md: 10 }}
+        spacing={{ base: 8, md: 12 }}
+        py={{ base: 20, md: 12 }}
       >
         <Heading
           fontWeight={600}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"100%"}
+          lineHeight={"130%"}
         >
           <br />
           Ready to start growing <br />
@@ -50,7 +50,7 @@ export default function CallToActionWithAnnotation() {
             bg="green.400"
             px={6}
             _hover={{
-              bg: "green.500",
+              bg: "green.800",
               color: "white",
             }}
           >

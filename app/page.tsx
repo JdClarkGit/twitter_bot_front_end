@@ -14,36 +14,86 @@ import {
   SimpleGrid,
   Text,
   Spacer,
-  Divider, Image, Center, Button, Stack, Icon, createIcon
+  Divider,
+  Image,
+  Center,
+  Button,
+  Stack,
+  Icon,
+  createIcon,
 } from "@chakra-ui/react";
 
-import BottomCta from '../components/landing/bottomCta'
-import LandingPageFooter from '../components/landing/footer';
-import Navbar from '../components/landing/navbar'
+import BottomCta from "../components/landing/bottomCta";
+import LandingPageFooter from "../components/landing/footer";
+import Navbar from "../components/landing/navbar";
 
 export default function Home() {
   return (
-    <div className="w-full h-screen text-sm bg-white flex flex-col justify-start items-center">
+    <div className="w-full h-screen text-sm bg-white flex flex-col justify-start items-start">
       <Navbar />
 
-      <Container
-        minH={"400px"}
-        maxW={"container.xl"}
-        paddingBottom={"20px"}
-      >
+      <Container minH={"400px"} maxW={"container.xl"} paddingBottom={"20px"}>
         <Text
           fontSize="3xl"
           color="black"
           lineHeight="tall"
-          textAlign="center"
-          as="b"
+          textAlign="left"
+          fontWeight="bold"
         >
-          TODO: Top level CTA
+          Effortlessly create engaging tweets
         </Text>
+        <Text
+          fontSize="3xl"
+          color="black"
+          lineHeight="tall"
+          textAlign="left"
+          fontWeight="bold"
+        >
+          and threads while preserving your authentic
+        </Text>
+        <Text
+          fontSize="3xl"
+          color="black"
+          lineHeight="tall"
+          textAlign="left"
+          fontWeight="bold"
+        >
+          writing style.
+        </Text>
+        <Text
+          fontSize="lg"
+          color="black"
+          lineHeight="tall"
+          textAlign="left"
+          fontWeight="bold"
+        >
+          Say goodbye to writer’s block and say hello to an endless stream of
+        </Text>
+        <Text
+          fontSize="lg"
+          color="black"
+          lineHeight="tall"
+          textAlign="left"
+          fontWeight="bold"
+        >
+          content to build your following.
+        </Text>
+        <Button
+          color="black"
+          bg="blue.400"
+          border="1px"
+          px={6}
+          _hover={{
+            bg: "green.800",
+            color: "white",
+          }}
+        >
+          Build My Audience!
+        </Button>
       </Container>
 
       <Container
-        minH={"300px"}
+        minH={"270px"}
         maxW={"container.xl"}
         paddingBottom={"20px"}
         borderTop="1px solid black"
@@ -61,7 +111,12 @@ export default function Home() {
       </Container>
 
       <Container minH={"450px"} maxW={"container.xl"} paddingBottom={"20px"}>
-        <Box textAlign="center" paddingTop="20px" paddingBottom="20px">
+        <Box
+          textAlign="center"
+          paddingTop="20px"
+          paddingBottom="40px"
+          marginBottom="20px"
+        >
           <Text
             fontSize="3xl"
             color="black"
@@ -74,7 +129,11 @@ export default function Home() {
         </Box>
 
         {/* TODO: refactor these review cards to be their own component */}
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing="40px">
+        <SimpleGrid
+          columns={{ base: 1, md: 3 }}
+          spacing="40px"
+          marginTop="20px"
+        >
           <Card>
             <CardHeader marginBottom={"1px"} paddingBottom="8px">
               <Heading size="lg">⭐ ⭐ ⭐ ⭐ ⭐</Heading>
@@ -176,13 +235,11 @@ export default function Home() {
         </Text>
       </Container>
 
-      <Container
-        maxW={"container.xl"}
-      >
+      <Container maxW={"container.xl"}>
         <BottomCta />
       </Container>
 
-      <LandingPageFooter/>
+      <LandingPageFooter />
     </div>
   );
 }
