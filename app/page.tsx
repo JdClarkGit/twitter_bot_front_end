@@ -1,6 +1,8 @@
 import BaseDemoVideo from "@/components/BaseDemoVideo";
 import TweetBotHeader from "@/components/TweetBotHeader";
 import LogInBtn from "@/components/LogInBtn";
+// import socialboostImage from "./Desktop/Socialboost/socialboostImage.png";
+import DemoLogo from "@components/DemoLogo";
 import {
   Badge,
   Box,
@@ -82,6 +84,7 @@ export default function Home() {
           color="black"
           bg="blue.400"
           border="1px"
+          borderColor="green"
           px={6}
           _hover={{
             bg: "green.800",
@@ -106,8 +109,9 @@ export default function Home() {
           textAlign="center"
           as="b"
         >
-          TODO: Diagram about how this shit works
+          Tweet Curation without the stagnation
         </Text>
+        <DemoLogo />
       </Container>
 
       <Container minH={"450px"} maxW={"container.xl"} paddingBottom={"20px"}>
