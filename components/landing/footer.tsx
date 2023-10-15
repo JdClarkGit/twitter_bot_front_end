@@ -93,7 +93,7 @@ export default function LandingPageFooter() {
               <Logo color={useColorModeValue("gray.700", "white")} />
             </Box>
             <Text fontSize={"sm"}>
-              © 2023 socialboost.ai LLC. All rights reserved
+              © 2023 easyengage.ai LLC. All rights reserved
             </Text>
             <Stack direction={"row"} spacing={6}>
               <SocialButton label={"Twitter"} href={"#"}>

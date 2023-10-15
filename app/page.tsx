@@ -2,7 +2,7 @@ import BaseDemoVideo from "@/components/BaseDemoVideo";
 import TweetBotHeader from "@/components/TweetBotHeader";
 import LogInBtn from "@/components/LogInBtn";
 // import socialboostImage from "./Desktop/Socialboost/socialboostImage.png";
-import DemoLogo from "@components/DemoLogo";
+// import DemoLogo from "@components/DemoLogo";
 import {
   Badge,
   Box,
@@ -111,7 +111,7 @@ export default function Home() {
         >
           Tweet Curation without the stagnation
         </Text>
-        <DemoLogo />
+        {/* <DemoLogo /> */}
       </Container>
 
       <Container minH={"450px"} maxW={"container.xl"} paddingBottom={"20px"}>
