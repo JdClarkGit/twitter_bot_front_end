@@ -76,6 +76,12 @@ export default function DashboardPage() {
 
         {/* Main Content Area */}
         <div className="flex flex-wrap gap-4">
+          <Link
+            href="/create"
+            className="p-2 w-1/3 border rounded shadow text-center h-12 hover:cursor-pointer hover:bg-white hover:text-blue-600 bg-blue-600 text-white"
+          >
+            CRM
+          </Link>
           {/* Recent Notes Card */}
           <div className="p-4 w-1/3 border rounded shadow">
             <h3 className="text-xl mb-4">Recent Notes</h3>
