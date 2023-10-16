@@ -96,7 +96,7 @@ export default function Home() {
           textAlign="left"
           fontWeight="bold"
         >
-          and let every word be a testament
+          Let every word be a testament to
         </Text>
         <Text
           fontSize="lg"
@@ -105,7 +105,7 @@ export default function Home() {
           textAlign="left"
           fontWeight="bold"
         >
-          to your raw, authentic self.
+          your raw, authentic self.
         </Text>
         <Button
           color="black"
