@@ -42,7 +42,7 @@ export default function Home() {
           textAlign="left"
           fontWeight="bold"
         >
-          Effortlessly create engaging tweets
+          AUTOMATE YOUR BRAND-BUILDING CONTENT.
         </Text>
         <Text
           fontSize="3xl"
@@ -51,7 +51,7 @@ export default function Home() {
           textAlign="left"
           fontWeight="bold"
         >
-          and threads while preserving your authentic
+          REMAIN UNMISTAKENLY YOU.
         </Text>
         <Text
           fontSize="3xl"
@@ -60,7 +60,7 @@ export default function Home() {
           textAlign="left"
           fontWeight="bold"
         >
-          writing style.
+          NEW CONTENT IDEAS? NO PROBLEM.
         </Text>
         <Text
           fontSize="lg"
@@ -69,7 +69,7 @@ export default function Home() {
           textAlign="left"
           fontWeight="bold"
         >
-          Say goodbye to writer’s block and say hello to an endless stream of
+          Ditch the expensive ghostwriters.
         </Text>
         <Text
           fontSize="lg"
@@ -78,13 +78,38 @@ export default function Home() {
           textAlign="left"
           fontWeight="bold"
         >
-          content to build your following.
+          Say goodbye to recycled tweets.
+        </Text>
+        <Text
+          fontSize="lg"
+          color="black"
+          lineHeight="tall"
+          textAlign="left"
+          fontWeight="bold"
+        >
+          Obliterate that dreaded writer's block
+        </Text>
+        <Text
+          fontSize="lg"
+          color="black"
+          lineHeight="tall"
+          textAlign="left"
+          fontWeight="bold"
+        >
+          and let every word be a testament
+        </Text>
+        <Text
+          fontSize="lg"
+          color="black"
+          lineHeight="tall"
+          textAlign="left"
+          fontWeight="bold"
+        >
+          to your raw, authentic self.
         </Text>
         <Button
           color="black"
-          bg="blue.400"
-          border="1px"
-          borderColor="green"
+          bg="green.400"
           px={6}
           _hover={{
             bg: "green.800",
@@ -93,6 +118,7 @@ export default function Home() {
         >
           Build My Audience!
         </Button>
+        <Text textAlign="left">Cancel anytime</Text>
       </Container>
 
       <Container
@@ -153,7 +179,7 @@ export default function Home() {
             <CardFooter>
               <Flex width="100%">
                 <Box flex="1">
-                  <Text as="b">Adolf H.</Text>
+                  <Text as="b">Customer</Text>
                 </Box>
                 <Spacer />
                 <Box>
@@ -180,7 +206,7 @@ export default function Home() {
             <CardFooter>
               <Flex width="100%">
                 <Box flex="1">
-                  <Text as="b">Adolf H.</Text>
+                  <Text as="b">Customer</Text>
                 </Box>
                 <Spacer />
                 <Box>
@@ -207,7 +233,7 @@ export default function Home() {
             <CardFooter>
               <Flex width="100%">
                 <Box flex="1">
-                  <Text as="b">Adolf H.</Text>
+                  <Text as="b">Customer</Text>
                 </Box>
                 <Spacer />
                 <Box>
