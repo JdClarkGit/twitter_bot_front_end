@@ -1,25 +1,102 @@
-import React, { useState } from "react";
-import Link from "next/link";
+import React, {
+  createContext,
+  useState,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+} from "react";
+import DataTable from "./datatable/datatable";
+
+const sampleData = [
+  {
+    handle: "@john_doe",
+    name: "John Doe",
+    bio: "Software developer",
+    location: "San Francisco",
+    website: "http://johndoe.com",
+    followers: 1000,
+    following: 500,
+  },
+];
+
+interface DarkModeContextType {
+  darkMode: boolean;
+  setDarkMode: Dispatch<SetStateAction<boolean>>;
+}
+
+const DarkModeContext = createContext<DarkModeContextType | undefined>(
+  undefined
+);
+
+export const DarkModeProvider: React.FC = ({ children }) => {
+  const [darkMode, setDarkMode] = useState(false);
+  return (
+    <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
+};
+
+const useDarkMode = () => {
+  const context = useContext(DarkModeContext);
+  if (!context) {
+    throw new Error("useDarkMode must be used within a DarkModeProvider");
+  }
+  return context;
+};
 
 export default function PromptCRM() {
+  const { darkMode, setDarkMode } = useDarkMode();
   const [crm, setCrm] = useState("");
   const [isChecked, setIsChecked] = useState(false);
 
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("bg-black", "text-white");
+    } else {
+      document.body.classList.remove("bg-black", "text-white");
+      document.body.classList.add("bg-white", "text-black");
+    }
+  }, [darkMode]);
+
   const handleCrm = () => {
     const result = prompt("Write what you would like your thread to be about");
-    if (result != null) {
+    if (result !== null) {
       setCrm(result);
     }
   };
 
   return (
-    <div className="flex flex-col mt-10 border border-black">
-      <p className="text-3xl font-semibold text-gray-800 mb-5 self-center">
+    <div
+      className={`flex flex-col mt-10 border h-screen ${
+        darkMode ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
+      <button
+        className={`p-2 rounded ${
+          darkMode ? "bg-black text-white" : "bg-white text-black"
+        }`}
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        Dark Mode
+      </button>
+
+      <p
+        className={`text-3xl font-semibold mb-5 self-center ${
+          darkMode ? "text-blue-600" : "text-gray-800"
+        }`}
+      >
         CRM Platform
       </p>
+
       <div className="space-x-5 flex flex-row">
         <div className="p-4 flex flex-row space-x-5">
-          <label className="flex items-center">
+          <label
+            className={`flex items-center ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          >
             <input
               type="checkbox"
               className="form-checkbox h-5 w-5 text-blue-600 mr-2"
@@ -28,104 +105,66 @@ export default function PromptCRM() {
             />
             Select All
           </label>
-          <label className="flex items-center">
+
+          <label
+            className={`flex items-center ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          >
             <input
               type="checkbox"
               className="form-checkbox h-5 w-5 text-blue-600 mr-2"
               checked={isChecked}
               onChange={(e) => setIsChecked(e.target.checked)}
             />
-            Select Page
+            Select
           </label>
         </div>
-        <button className="btn-primary rounded-lg p-2 text-center bg-blue-600 text-white h-10 hover:bg-[#D1D5DA] hover:text-black border-rounded">
+
+        <button
+          className={`btn-primary rounded-lg p-2 text-center ${
+            darkMode ? "bg-white text-black" : "bg-blue-600 text-white"
+          } h-10 hover:bg-[#D1D5DA] hover:text-black border-rounded`}
+        >
           Auto-DM
         </button>
-        <button className="btn-primary rounded-lg p-2 text-center bg-blue-600 text-white h-10 hover:bg-[#D1D5DA] hover:text-black border-rounded">
+
+        <button
+          className={`btn-primary rounded-lg p-2 text-center ${
+            darkMode ? "bg-white text-black" : "bg-blue-600 text-white"
+          } h-10 hover:bg-[#D1D5DA] hover:text-black border-rounded`}
+        >
           Auto-Reply
         </button>
       </div>
 
-      <div className="flex flex-row space-x-4 mb-5 border border-black bg-gray-600">
-        <p
-          className="hover:cursor-pointer underline text-white px-4 py-2 rounded-md"
-          onClick={handleCrm}
-        >
-          Handle
-        </p>
-        <p
-          className="hover:cursor-pointer underline text-white px-4 py-2 rounded-md"
-          onClick={handleCrm}
-        >
-          Name
-        </p>
-        <p
-          className="hover:cursor-pointer underline text-white px-4 py-2 rounded-md"
-          onClick={handleCrm}
-        >
-          Bio
-        </p>
-        <p
-          className="hover:cursor-pointer underline text-white px-4 py-2 rounded-md"
-          onClick={handleCrm}
-        >
-          Location
-        </p>
-        <p
-          className="hover:cursor-pointer underline text-white px-4 py-2 rounded-md"
-          onClick={handleCrm}
-        >
-          Website
-        </p>
-        <p
-          className="hover:cursor-pointer underline text-white px-4 py-2 rounded-md"
-          onClick={handleCrm}
-        >
-          Followers
-        </p>
-        <p
-          className="hover:cursor-pointer underline text-white px-4 py-2 rounded-md"
-          onClick={handleCrm}
-        >
-          Following
-        </p>
+      <div
+        className={`flex flex-row space-x-4 mb-5 border ${
+          darkMode ? "bg-gray-800" : "bg-gray-600"
+        }`}
+      >
+        <DataTable data={sampleData} darkMode={darkMode} />
       </div>
 
-      <div className="flex flex-row space-x-4 mb-5">
-        <p className="hover:cursor-pointer underline text-black px-4 py-2 rounded-md">
-          1
+      {crm && (
+        <p
+          className={`text-xl mt-5 self-center ${
+            darkMode ? "text-white" : "text-gray-800"
+          }`}
+        >
+          {crm}
         </p>
-        <p className="hover:cursor-pointer underline text-black px-4 py-2 rounded-md">
-          2
-        </p>
-        <p className="hover:cursor-pointer underline text-black px-4 py-2 rounded-md">
-          3
-        </p>
-        <p className="hover:cursor-pointer underline text-black px-4 py-2 rounded-md">
-          4
-        </p>
-        <p className="hover:cursor-pointer underline text-black px-4 py-2 rounded-md">
-          5
-        </p>
-        <p className="hover:cursor-pointer underline text-black px-4 py-2 rounded-md">
-          6
-        </p>
-        <p className="hover:cursor-pointer underline text-black px-4 py-2 rounded-md">
-          7
-        </p>
-      </div>
-
-      <div className="flex flex-row space-x-4 mb-5">
-        <p className="hover:cursor-pointer underline text-black px-4 py-2 rounded-md">
-          Even More Info 1
-        </p>
-        <p className="hover:cursor-pointer underline text-black px-4 py-2 rounded-md">
-          Even More Info 2
-        </p>
-        {/* You can add more p tags or other elements here for this row */}
-      </div>
-
-      {crm && <p className="text-xl mt-5 self-center">{crm}</p>}
+      )}
     </div>
   );
 }
+
+// // Sample Usage in App or any parent component
+// function App() {
+//   return (
+//     <DarkModeProvider>
+//       <PromptCRM />
+//       {/* ... other components */}
+//     </DarkModeProvider>
+//   );
+// }
