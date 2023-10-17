@@ -69,7 +69,8 @@ export default function Home() {
           textAlign="left"
           fontWeight="bold"
         >
-          Ditch the expensive ghostwriters.
+          Ditch the expensive ghostwriters and redundant software. Say goodbye
+          to recycled tweets.
         </Text>
         <Text
           fontSize="lg"
@@ -78,34 +79,8 @@ export default function Home() {
           textAlign="left"
           fontWeight="bold"
         >
-          Say goodbye to recycled tweets.
-        </Text>
-        <Text
-          fontSize="lg"
-          color="black"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          Obliterate that dreaded writer's block
-        </Text>
-        <Text
-          fontSize="lg"
-          color="black"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          Let every word be a testament to
-        </Text>
-        <Text
-          fontSize="lg"
-          color="black"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          your raw, authentic self.
+          Obliterate that dreaded writer's block. Let every word be a testament
+          to your raw, authentic self.
         </Text>
         <Button
           color="black"

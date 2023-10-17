@@ -48,9 +48,9 @@ export default function PromptCRM() {
           </li>
         </ul>
       </div>
-      <div className="flex flex-col mt-10 border w-screen h-screen bg-[#1B2538] text-[#97DAD2] border-[#dddede] border-x-4 border-y-4">
+      <div className="flex flex-col mt-15 border w-screen h-screen bg-[#1B2538] text-[#97DAD2] border-[#dddede] border-x-1 border-y-1 rounded">
         <div className="space-x-5 flex flex-row">
-          <div className="p-4 flex flex-row space-x-5">
+          <div className="p-4 flex flex-row space-x-5 mt-10">
             <label className="flex items-center text-[#97DAD2]">
               <input
                 type="checkbox"
@@ -71,7 +71,7 @@ export default function PromptCRM() {
             </label>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-10">
             <button
               onMouseEnter={() => setIsAutoDMDropdownOpen(true)}
               className="btn-primary rounded-lg p-2 text-center bg-[#91D8CF] text-white h-10 hover:bg-[#D1D5DA] hover:text-black"
@@ -101,7 +101,7 @@ export default function PromptCRM() {
             )}
           </div>
 
-          <div className="relative">
+          <div className="relative mt-10">
             <button
               onMouseEnter={() => setIsAutoReplyDropdownOpen(true)}
               className="btn-primary rounded-lg p-2 text-center bg-[#91D8CF] text-white h-10 hover:bg-[#D1D5DA] hover:text-black"
@@ -131,7 +131,7 @@ export default function PromptCRM() {
             )}
           </div>
 
-          <div className="relative">
+          <div className="relative mt-10">
             <button
               onMouseEnter={() => setIsListDropdownOpen(true)}
               className="btn-primary hover:cursor-pointer rounded-lg p-2 text-center bg-[#97DAD2] text-white h-10 hover:bg-[#D1D5DA] hover:text-black"
@@ -164,7 +164,7 @@ export default function PromptCRM() {
             )}
           </div>
 
-          <div className="relative">
+          <div className="relative mt-10">
             <button
               onMouseEnter={() => setIsImportDropdownOpen(true)}
               className="btn-primary rounded-lg p-2 text-center bg-[#91D8CF] text-white h-10 hover:bg-[#D1D5DA] hover:text-black"
