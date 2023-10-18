@@ -1,3 +1,4 @@
+"use client";
 import BaseDemoVideo from "@/components/BaseDemoVideo";
 import TweetBotHeader from "@/components/TweetBotHeader";
 import LogInBtn from "@/components/LogInBtn";
@@ -23,97 +24,70 @@ import {
   Stack,
   Icon,
   createIcon,
+  Link,
 } from "@chakra-ui/react";
+import { CalendarIcon } from "@chakra-ui/icons";
 
 import BottomCta from "../components/landing/bottomCta";
 import LandingPageFooter from "../components/landing/footer";
 import Navbar from "../components/landing/navbar";
+import SchedulingFeature from '../components/landing/SchedulingFeature'
 
 export default function Home() {
   return (
-    <Box className="text-sm flex flex-col justify-start items-start" bgGradient='linear(to-br, blue.600, black)'>
+    <Box bgGradient="linear(to-br, black, blue.700, black)">
       <Navbar />
 
-      <Container minH={"400px"} maxW={"container.xl"} paddingBottom={"20px"}>
-        <Text
-          fontSize="3xl"
-          color="black"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          AUTOMATE YOUR BRAND-BUILDING CONTENT.
-        </Text>
-        <Text
-          fontSize="3xl"
-          color="black"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          REMAIN UNMISTAKENLY YOU.
-        </Text>
-        <Text
-          fontSize="3xl"
-          color="black"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          NEW CONTENT IDEAS? NO PROBLEM.
-        </Text>
-        <Text
-          fontSize="lg"
-          color="black"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          Ditch the expensive ghostwriters and redundant software. Say goodbye
-          to recycled tweets.
-        </Text>
-        <Text
-          fontSize="lg"
-          color="black"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          Obliterate that dreaded writer's block. Let every word be a testament
-          to your raw, authentic self.
-        </Text>
-        <Button
-          color="black"
-          bg="green.400"
-          px={6}
-          _hover={{
-            bg: "green.800",
-            color: "white",
-          }}
-        >
-          Build My Audience!
-        </Button>
-        <Text textAlign="left">Cancel anytime</Text>
-      </Container>
-
       <Container
-        minH={"270px"}
-        maxW={"container.xl"}
+        minH={"400px"}
+        maxW={"container.lg"}
         paddingBottom={"20px"}
-        borderTop="1px solid black"
-        borderBottom="1px solid black"
+        paddingTop={"40px"}
       >
         <Text
-          fontSize="3xl"
-          color="black"
+          fontSize="5xl"
+          color="white"
           lineHeight="tall"
-          textAlign="center"
-          as="b"
+          textAlign="left"
+          fontWeight="bold"
         >
-          Tweet Curation without the stagnation
+          Supercharge your Twitter growth and monetize your expanding audience.
         </Text>
-        {/* <DemoLogo /> */}
+        <br />
+        <Text
+          fontSize="5xl"
+          color="white"
+          lineHeight="tall"
+          textAlign="left"
+          fontWeight="bold"
+        >
+          Powered by AI
+        </Text>
+        <br />
+        <Center>
+          <Button
+            color="black"
+            bg="green.400"
+            px={6}
+            _hover={{
+              bg: "green.800",
+              color: "white",
+            }}
+            size="lg"
+            paddingRight="40px"
+            paddingLeft="40px"
+          >
+            Let's go!
+          </Button>
+        </Center>
+        <Center marginTop="20px">
+          <Link textAlign="left" color="white">
+            Learn more.
+          </Link>
+        </Center>
       </Container>
+
+      <SchedulingFeature />
 
       <Container minH={"450px"} maxW={"container.xl"} paddingBottom={"20px"}>
         <Box
@@ -124,12 +98,12 @@ export default function Home() {
         >
           <Text
             fontSize="3xl"
-            color="black"
+            color="white"
             lineHeight="tall"
             textAlign="center"
             as="b"
           >
-            🔥 Customers can't stop raving about their growth
+            Customers can't stop raving about their growth 🔥
           </Text>
         </Box>
 

@@ -25,6 +25,7 @@ export default function CallToActionWithAnnotation() {
           fontWeight={600}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
           lineHeight={"130%"}
+          color="white"
         >
           <br />
           Ready to start growing <br />
@@ -32,7 +33,7 @@ export default function CallToActionWithAnnotation() {
             your audience? 🤑
           </Text>
         </Heading>
-        <Text color={"gray.500"}>
+        <Text color={"white"}>
           Build your social media following through consistent automatically
           generated social media threads that are in your writing style (or the
           style of your favorite creator)! Reap the benefits of more money and
@@ -53,6 +54,7 @@ export default function CallToActionWithAnnotation() {
               bg: "green.800",
               color: "white",
             }}
+            size="lg"
           >
             Get Started
           </Button>
@@ -62,7 +64,7 @@ export default function CallToActionWithAnnotation() {
           <Box>
             <Icon
               as={Arrow}
-              color={useColorModeValue("gray.800", "gray.300")}
+              color={useColorModeValue("white", "gray.300")}
               w={71}
               position={"absolute"}
               right={-71}
@@ -75,6 +77,7 @@ export default function CallToActionWithAnnotation() {
               right={"-125px"}
               top={"-15px"}
               transform={"rotate(10deg)"}
+              color="white"
             >
               Starting at $15/mo
             </Text>
