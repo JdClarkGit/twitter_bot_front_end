@@ -31,7 +31,7 @@ import Navbar from "../components/landing/navbar";
 
 export default function Home() {
   return (
-    <div className="w-full h-screen text-sm bg-white flex flex-col justify-start items-start">
+    <Box className="text-sm flex flex-col justify-start items-start" bgGradient='linear(to-br, blue.600, black)'>
       <Navbar />
 
       <Container minH={"400px"} maxW={"container.xl"} paddingBottom={"20px"}>
@@ -245,6 +245,6 @@ export default function Home() {
       </Container>
 
       <LandingPageFooter />
-    </div>
+    </Box>
   );
 }
