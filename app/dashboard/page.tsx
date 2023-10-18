@@ -29,7 +29,7 @@ export default function DashboardPage() {
                   focus-visible:outline-none focus-visible:ring-2
                   focus-visible:ring-offset-2 disabled:opacity-50
                   disabled:pointer-events-none ring-offset-background
-                  text-white h-12 py-4 px-8 bg-blue-600 rounded-full
+                  text-white h-12 py-4 px-8 bg-[#256861] rounded-full
                   hover:bg-gray-800"
                 >
                   {item.alt}
@@ -78,29 +78,31 @@ export default function DashboardPage() {
         <div className="flex flex-wrap gap-4">
           <Link
             href="/create"
-            className="p-2 w-1/3 border rounded shadow text-center h-12 hover:cursor-pointer hover:bg-white hover:text-blue-600 bg-blue-600 text-white"
+            className="p-2 w-1/3 border rounded shadow text-center h-12 hover:cursor-pointer hover:bg-white hover:text-[#256861] bg-[#256861] text-white"
           >
             CRM
           </Link>
           {/* Recent Notes Card */}
-          <div className="p-4 w-1/3 border rounded shadow">
+          <div className="p-2 w-1/3 border rounded shadow text-center h-20 hover:cursor-pointer hover:bg-white hover:text-[#256861] bg-[#256861] text-white">
             <h3 className="text-xl mb-4">Recent Notes</h3>
+            <Link href="/notes" className="underline">
+              View All
+            </Link>
             {/* ... list of recent notes ... */}
-            <Link href="/notes">View All</Link>
           </div>
 
           {/* Tasks for Today Card */}
-          <div className="p-4 w-1/3 border rounded shadow">
+          <div className="p-2 w-1/3 border rounded shadow text-center h-12 hover:cursor-pointer hover:bg-white hover:text-[#256861] bg-[#256861] text-white">
             <h3 className="text-xl mb-4">Tasks for Today</h3>
             {/* ... list of tasks ... */}
           </div>
 
           {/* Quick Stats Card */}
-          <div className="p-4 w-1/3 border rounded shadow">
+          <div className="p-2 w-1/3 border rounded shadow text-center h-12 hover:cursor-pointer hover:bg-white hover:text-[#256861] bg-[#256861] text-white">
             <h3 className="text-xl mb-4">Quick Stats</h3>
             {/* ... some stats ... */}
           </div>
-          <div className="p-4 w-1/3 border rounded shadow text-center">
+          <div className="p-2 w-1/3 border rounded shadow text-center h-12 hover:cursor-pointer hover:bg-white hover:text-[#256861] bg-[#256861] text-white">
             <Link href="/faq">FAQ</Link>
             {/* ... other links ... */}
           </div>
