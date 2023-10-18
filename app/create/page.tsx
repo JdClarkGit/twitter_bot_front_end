@@ -12,27 +12,27 @@ export default function CreateContent() {
   return (
     <div className="flex flex-col justify-center items-center h-screen space-y-8">
       {activePage === null && (
-        <div className="flex flex-col space-y-4 shadow-2xl rounded-lg bg-gray-300 m-8 p-6">
+        <div className="flex flex-col space-y-4 shadow-2xl shadow-white rounded-lg bg-gray-300 m-8 p-6">
           <h1 className="text-3xl font-bold mb-4">
             What would you like to create?
           </h1>
 
           <button
             onClick={() => setActivePage("PromptTweet")}
-            className="btn-primary bg-blue-600 text-white h-10 hover:bg-[#D1D5DA] hover:text-black"
+            className="btn-primary bg-[#256861] text-white h-10 hover:bg-[#D1D5DA] hover:text-black hover:border hover:border-[#D1D5DA]"
           >
             Tweet
           </button>
 
           <button
             onClick={() => setActivePage("PromptThread")}
-            className="btn-primary bg-blue-600 text-white h-10 hover:bg-[#D1D5DA] hover:text-black"
+            className="btn-primary bg-[#256861] text-white h-10 hover:bg-[#D1D5DA] hover:text-black hover:border hover:border-[#D1D5DA]"
           >
             Thread
           </button>
           <button
             onClick={() => setActivePage("PromptCrm")}
-            className="btn-primary bg-blue-600 text-white h-10 hover:bg-[#D1D5DA] hover:text-black"
+            className="btn-primary bg-[#256861] text-white h-10 hover:bg-[#D1D5DA] hover:border hover:border-[#D1D5DA] hover:text-black"
           >
             CRM
           </button>
