@@ -198,13 +198,31 @@ export default function Home() {
       </Container>
 
       <Container
-        minH={"300px"}
+        minH={"200px"}
         maxW={"container.xl"}
         paddingBottom={"20px"}
         borderTop="1px solid black"
         borderBottom="1px solid black"
         textAlign="center"
       >
+        <Container>
+          <Button
+            mt="3"
+            color="black"
+            bg="green.400"
+            px={6}
+            _hover={{
+              bg: "green.800",
+              color: "white",
+            }}
+            size="lg"
+          >
+            Start My Free Trial
+          </Button>
+          <Text color="#bdbdbd" mb="8">
+            Cancel anytime
+          </Text>
+        </Container>
         <Text
           fontSize="3xl"
           color="white"
@@ -217,9 +235,8 @@ export default function Home() {
         </Text>
         <Grid
           templateRows="repeat(1, 1fr)"
-          templateColumns="repeat(2,1fr)"
-          gap={2}
-          textAlign="center"
+          templateColumns="repeat(1, 1fr)"
+          gap={1}
         >
           <Container textAlign="left">
             <Text
@@ -287,7 +304,6 @@ export default function Home() {
                 </Text>
               </Text>
             </Container>
-
             <Container textAlign="left">
               <Text
                 fontSize="2xl"
@@ -379,166 +395,6 @@ export default function Home() {
             </Container>
           </Container>
         </Grid>
-        {/* <Container textAlign="left">
-          <Text
-            fontSize="2xl"
-            color="#C6F6D4"
-            lineHeight="tall"
-            textAlign="center"
-            as="b"
-          >
-            🚀 Content Curation with Idea Agent
-            <Text
-              fontSize="lg"
-              align="left"
-              color="#bdbdbd"
-              fontWeight="normal"
-            >
-              * Curated content from a library of millions, tailored to your
-              niche.
-              <br />
-              * Dynamic search for topics, keywords, or influencers.
-              <br />
-              * Exclusion tools for specific keywords or sources.
-              <br />
-              * Tailored content suggestions, supercharged by AI.
-              <br />
-              * Seamless integration with ChatGPT for AI-powered content
-              suggestions.
-              <br />
-              * Automated tweet re-writer for optimizing engagement.
-              <br />
-              * Curated thread suggestions and hooks, ensuring relevance.
-              <br />
-            </Text>
-          </Text>
-          <Container textAlign="left">
-            <Text
-              fontSize="2xl"
-              color="#C6F6D4"
-              lineHeight="tall"
-              textAlign="center"
-              as="b"
-            >
-              🗓 Scheduling & Automations with Research Agent
-              <Text
-                fontSize="lg"
-                align="left"
-                color="#bdbdbd"
-                fontWeight="normal"
-              >
-                * Schedule tweets, threads, and auto-responses.
-                <br />
-                * Rich media support - Emojis, GIFs, images, and videos.
-                <br />
-                * Quick queue system for efficient content planning.
-                <br />
-                * AI-driven insights into optimal tweeting times.
-                <br />
-                * Intuitive draft creation and management.
-                <br />
-                * Interaction-based auto DMs to maintain engagement.
-                <br />
-                * Automated promotions linking back to your products or
-                services.
-                <br />
-              </Text>
-            </Text>
-          </Container>
-
-          <Container textAlign="left">
-            <Text
-              fontSize="2xl"
-              color="#C6F6D4"
-              lineHeight="tall"
-              textAlign="center"
-              as="b"
-            >
-              🤝 Twitter CRM Integration
-              <Text
-                fontSize="lg"
-                align="left"
-                color="#bdbdbd"
-                fontWeight="normal"
-              >
-                * Introducing the NEW Lead Finder: Use AI to discover potential
-                leads on Twitter.
-                <br />
-                * Engage with audiences based on keywords or profiles.
-                <br />
-                * Smart filtering options to streamline your feed.
-                <br />
-                * Auto-responses crafted by AI.
-                <br />
-                * Organized lists based on interactions or imported data.
-                <br />
-                * Personal note features for every contact.
-                <br />
-              </Text>
-            </Text>
-          </Container>
-
-          <Container textAlign="left">
-            <Text
-              fontSize="2xl"
-              color="#C6F6D4"
-              lineHeight="tall"
-              textAlign="center"
-              as="b"
-            >
-              📊 Analytics Dashboard
-              <Text
-                fontSize="lg"
-                align="left"
-                color="#bdbdbd"
-                fontWeight="normal"
-              >
-                * Comprehensive insights into key performance metrics.
-                <br />
-                * Discover top-performing tweets and their impact.
-                <br />
-                * Monitor daily growth trends.
-                <br />
-                * Detailed analytics for every tweet.
-                <br />
-                * AI-powered tweet re-write suggestions.
-                <br />
-                * Full-fledged insights: impressions, clicks, engagements, and
-                more.
-                <br />
-                * Share your success stats (optional).
-                <br />
-              </Text>
-            </Text>
-          </Container>
-
-          <Container textAlign="left">
-            <Text
-              fontSize="2xl"
-              color="#C6F6D4"
-              lineHeight="tall"
-              textAlign="center"
-              as="b"
-            >
-              🔥 Extras for Maximum Utility
-              <Text
-                fontSize="lg"
-                align="left"
-                color="#bdbdbd"
-                fontWeight="normal"
-              >
-                * Multi-account management without additional costs.
-                <br />
-                * Ghostwriting features for client management.
-                <br />
-                * Preview links for seamless content sharing.
-                <br />
-              </Text>
-            </Text>
-          </Container>
-        </Container> */}
-
-        {/* insert other code here */}
       </Container>
 
       <Container
@@ -548,6 +404,25 @@ export default function Home() {
         borderTop="1px solid black"
         borderBottom="1px solid black"
       >
+        <Container>
+          <Button
+            mt="3"
+            color="black"
+            bg="green.400"
+            textAlign="center"
+            px={6}
+            _hover={{
+              bg: "green.800",
+              color: "white",
+            }}
+            size="lg"
+          >
+            Let's Build My Brand
+          </Button>
+          <Text color="#bdbdbd" mb="8">
+            Cancel anytime
+          </Text>
+        </Container>
         <Container mb="8">
           <Text
             fontSize="5xl"
