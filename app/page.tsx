@@ -231,19 +231,22 @@ export default function Home() {
           as="b"
         >
           All the features you've been waiting for with Easy Engage
-          <Text fontSize="md">(and then some)</Text>
+          <Text fontSize="md" mb="8">
+            (and then some)
+          </Text>
         </Text>
         <Grid
           templateRows="repeat(1, 1fr)"
           templateColumns="repeat(1, 1fr)"
           gap={1}
+          textAlign="left"
         >
           <Container textAlign="left">
             <Text
               fontSize="2xl"
               color="#C6F6D4"
               lineHeight="tall"
-              textAlign="center"
+              textAlign="left"
               as="b"
             >
               🚀 Content Curation with Idea Agent
@@ -252,6 +255,7 @@ export default function Home() {
                 align="left"
                 color="#bdbdbd"
                 fontWeight="normal"
+                mb="8"
               >
                 * Curated content from a library of millions, tailored to your
                 niche.
@@ -285,6 +289,7 @@ export default function Home() {
                   align="left"
                   color="#bdbdbd"
                   fontWeight="normal"
+                  mb="8"
                 >
                   * Schedule tweets, threads, and auto-responses.
                   <br />
@@ -318,6 +323,7 @@ export default function Home() {
                   align="left"
                   color="#bdbdbd"
                   fontWeight="normal"
+                  mb="8"
                 >
                   * Introducing the NEW Lead Finder: Use AI to discover
                   potential leads on Twitter.
@@ -349,6 +355,7 @@ export default function Home() {
                   align="left"
                   color="#bdbdbd"
                   fontWeight="normal"
+                  mb="8"
                 >
                   * Comprehensive insights into key performance metrics.
                   <br />
@@ -428,7 +435,7 @@ export default function Home() {
             fontSize="5xl"
             color="#47BB78"
             lineHeight="tall"
-            textAlign="center"
+            textAlign="left"
             as="b"
           >
             FAQ
