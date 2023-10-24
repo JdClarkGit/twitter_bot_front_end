@@ -18,26 +18,59 @@ export default function DashboardPage() {
   const menuItems = [
     { alt: "Home", src: "/path/to/notes-logo.png", href: null },
     { alt: "Create", src: "/path/to/image.png", href: "/create" },
-    { alt: "Notes", src: "/path/to/notes-logo.png", href: "/notes" },
+    { alt: "Drafts", src: "/path/to/notes-logo.png", href: "/notes" },
     { alt: "Profile", src: "/path/to/notes-logo.png", href: "/profile" },
     { alt: "Settings", src: "/path/to/image.png", href: "/settings" },
     { alt: "Log Out", src: "/path/to/image.png", href: "/" },
   ];
 
   return (
-    <Flex height="100vh" width="100vw" backgroundColor="white">
+    <Flex
+      height="100vh"
+      width="100vw"
+      bgGradient="linear(to-br, black, blue.700, black)"
+    >
       {/* Sidebar Menu */}
-      <Box width="250px" paddingY={5}>
+      <Box
+        height="100%"
+        width="250px"
+        paddingY={5}
+        borderRight="1px solid gray "
+      >
         {menuItems.map((item, index) => (
-          <Box key={index} mb={3} textAlign="center">
+          <Box key={index} mb={35} textAlign="center">
             {item.href ? (
-              <LinkBox as="div">
+              <Button
+                variant="ghost"
+                background="#64B828"
+                cursor="pointer"
+                color="white"
+                width="230px"
+                _hover={{
+                  bgColor: "white",
+                  color: "#256861",
+                  cursor: "pointer",
+                }}
+              >
                 <LinkOverlay as={Link} href={item.href}>
                   {item.alt}
                 </LinkOverlay>
-              </LinkBox>
+              </Button>
             ) : (
-              <Button variant="ghost">{item.alt}</Button>
+              <Button
+                variant="ghost"
+                background="#64B828"
+                cursor="pointer"
+                color="white"
+                width="230px"
+                _hover={{
+                  bgColor: "white",
+                  color: "#256861",
+                  cursor: "pointer",
+                }}
+              >
+                {item.alt}
+              </Button>
             )}
           </Box>
         ))}
@@ -47,8 +80,9 @@ export default function DashboardPage() {
       <Box flex="1" p={5}>
         {/* Header Area */}
         <Flex justifyContent="space-between" alignItems="center" mb={4}>
-          <Heading as="h2" size="lg">
-            Dashboard
+          <Heading as="h2" size="md" color="white">
+            Hello 👋! Welcome to tour dashboard. Let's leverage AI to grow your
+            brand, without the hassle.
           </Heading>
           <Box>
             <Button variant="ghost" mr={3}>
@@ -79,12 +113,19 @@ export default function DashboardPage() {
             boxShadow="md"
             textAlign="center"
             _hover={{ bgColor: "white", color: "#256861", cursor: "pointer" }}
-            bg="#256861"
+            bg="#64B828"
             color="white"
           >
-            <LinkOverlay as={Link} href="/create" size="md">
-              CRM Dashboard
-            </LinkOverlay>
+            <Heading size="md">
+              <LinkOverlay
+                as={Link}
+                href="/create"
+                color="white"
+                _hover={{ color: "black" }}
+              >
+                CRM Dashboard
+              </LinkOverlay>
+            </Heading>
           </LinkBox>
 
           {/* Recent Notes */}
@@ -96,8 +137,8 @@ export default function DashboardPage() {
             borderRadius="md"
             boxShadow="md"
             textAlign="center"
-            _hover={{ bgColor: "white", color: "#256861", cursor: "pointer" }}
-            bg="#256861"
+            _hover={{ bgColor: "white", color: "black", cursor: "pointer" }}
+            bg="#64B828"
             color="white"
           >
             <Heading size="md" mb={3}>
