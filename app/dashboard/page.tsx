@@ -1,27 +1,46 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faPlus,
+  faFileAlt,
+  faUser,
+  faCog,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faHome, faPlus, faFileAlt, faUser, faCog, faSignOutAlt);
+
 library.add(faSearch); // Adds the search icon to the library
 import React from "react";
 import Link from "next/link";
 import {
   Box,
+  Badge,
   Button,
   Flex,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Container,
+  Text,
+  Divider,
   Heading,
   Input,
   LinkBox,
   LinkOverlay,
+  Spacer,
 } from "@chakra-ui/react";
 
 export default function DashboardPage() {
   const menuItems = [
-    { alt: "Home", src: "/path/to/notes-logo.png", href: null },
-    { alt: "Create", src: "/path/to/image.png", href: "/create" },
-    { alt: "Drafts", src: "/path/to/notes-logo.png", href: "/notes" },
-    { alt: "Profile", src: "/path/to/notes-logo.png", href: "/profile" },
-    { alt: "Settings", src: "/path/to/image.png", href: "/settings" },
-    { alt: "Log Out", src: "/path/to/image.png", href: "/" },
+    { alt: "Home", icon: faHome, href: null },
+    { alt: "Create", icon: faPlus, href: "/create" },
+    { alt: "Drafts", icon: faFileAlt, href: "/notes" },
+    { alt: "Profile", icon: faUser, href: "/profile" },
+    { alt: "Settings", icon: faCog, href: "/settings" },
+    { alt: "Log Out", icon: faSignOutAlt, href: "/" },
   ];
 
   return (
@@ -42,34 +61,48 @@ export default function DashboardPage() {
             {item.href ? (
               <Button
                 variant="ghost"
-                background="#64B828"
+                background="none"
                 cursor="pointer"
                 color="white"
                 width="230px"
+                height="100px"
                 _hover={{
-                  bgColor: "white",
-                  color: "#256861",
+                  bgColor: "#64B828",
                   cursor: "pointer",
                 }}
               >
+                {/* <FontAwesomeIcon icon={item.icon} size="2x" className="mr-2" /> */}
                 <LinkOverlay as={Link} href={item.href}>
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    size="sm"
+                    className="mr-2"
+                  />
                   {item.alt}
                 </LinkOverlay>
               </Button>
             ) : (
               <Button
                 variant="ghost"
-                background="#64B828"
+                background="none"
                 cursor="pointer"
                 color="white"
                 width="230px"
+                height="100px"
                 _hover={{
-                  bgColor: "white",
-                  color: "#256861",
+                  bgColor: "#64B828",
+                  color: "white",
                   cursor: "pointer",
                 }}
               >
-                {item.alt}
+                <LinkOverlay>
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    size="sm"
+                    className="mr-2"
+                  />
+                  {item.alt}
+                </LinkOverlay>
               </Button>
             )}
           </Box>
@@ -80,13 +113,13 @@ export default function DashboardPage() {
       <Box flex="1" p={5}>
         {/* Header Area */}
         <Flex justifyContent="space-between" alignItems="center" mb={4}>
-          <Heading as="h2" size="md" color="white">
+          <Heading as="h2" size="md" color="white" textAlign="center">
             Hello 👋! Welcome to tour dashboard. Let's leverage AI to grow your
             brand, without the hassle.
           </Heading>
           <Box>
             <Button variant="ghost" mr={3}>
-              🔔
+              🔔 Notifications
             </Button>{" "}
             {/* Notification Icon */}
             <Input
@@ -97,7 +130,6 @@ export default function DashboardPage() {
               paddingLeft="40px"
               maxWidth="300px"
             />
-            {/* FontAwesome icon can be placed here if desired */}
           </Box>
         </Flex>
 
@@ -106,7 +138,7 @@ export default function DashboardPage() {
           {/* CRM Link */}
           <LinkBox
             as="div"
-            w="1/2" // <-- Adjusted width here
+            w="1/2"
             p={4}
             borderWidth="1px"
             borderRadius="md"
@@ -153,6 +185,53 @@ export default function DashboardPage() {
         </Flex>
 
         {/* Footer Area (if needed) */}
+        <Heading
+          mt={40}
+          mb={20}
+          as="h3"
+          size="lg"
+          color="white"
+          textAlign="center"
+        >
+          AI generated Tweet ideas 💡 for you based on your previous content
+        </Heading>
+        <Card width="30%" bgGradient="linear(to-br, black, blue.700, black)">
+          <CardHeader marginBottom={"1px"} paddingBottom="8px">
+            <Heading size="lg">AI Generated Topic # 1</Heading>
+          </CardHeader>
+          <CardBody marginTop={"1px"} paddingTop="8px">
+            <Text lineHeight="tall" fontSize="md">
+              Idea 1
+            </Text>
+            <Button>Edit</Button>
+            <Input placeholder="Feedback..." />
+          </CardBody>
+          <Divider color="white" />
+          <CardFooter>
+            <Flex width="30%">
+              <Box flex="1">
+                <Button
+                  background="#50931F"
+                  as="b"
+                  _hover={{
+                    bgColor: "white",
+                    color: "black",
+                    cursor: "pointer",
+                  }}
+                >
+                  Tweet!
+                </Button>
+              </Box>
+              <Spacer />
+              <Box>
+                <Badge ml="2" colorScheme="green">
+                  Verified Original
+                </Badge>
+              </Box>
+            </Flex>
+          </CardFooter>
+        </Card>
+
         {/* ... */}
       </Box>
     </Flex>
