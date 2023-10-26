@@ -33,169 +33,28 @@ import BottomCta from "../components/landing/bottomCta";
 import LandingPageFooter from "../components/landing/footer";
 import Navbar from "../components/landing/navbar";
 import SchedulingFeature from "../components/landing/SchedulingFeature";
+import StatsGridWithImage from "@/components/landing/StatsGridWithImage";
+import TopCta from "../components/landing/TopCta";
+import Testimonials from "../components/landing/Testimonials"
 
 export default function Home() {
   return (
-    <Box bgGradient="linear(to-br, black, blue.700, black)">
+    <Box bgGradient="linear(to-br, black, blue.800, black)">
       <Navbar />
 
-      <Container
-        minH={"400px"}
-        maxW={"container.lg"}
-        paddingBottom={"20px"}
-        paddingTop={"40px"}
-      >
-        <Text
-          fontSize="5xl"
-          color="white"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          Supercharge your Twitter growth and monetize your expanding audience.
-        </Text>
-        <br />
-        <Text
-          fontSize="5xl"
-          color="white"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-        >
-          Powered by AI
-        </Text>
-        <br />
-        <Center>
-          <Button
-            color="black"
-            bg="green.400"
-            px={6}
-            _hover={{
-              bg: "green.800",
-              color: "white",
-            }}
-            size="lg"
-            paddingRight="40px"
-            paddingLeft="40px"
-          >
-            Let's go!
-          </Button>
-        </Center>
-        <Center marginTop="20px">
-          <Link textAlign="left" color="white">
-            Learn more.
-          </Link>
-        </Center>
+      <TopCta />
+
+      <Container maxW="xs">
+        <Divider color="white"/>
       </Container>
+
+      <StatsGridWithImage />
+
+      
 
       <SchedulingFeature />
 
-      <Container minH={"450px"} maxW={"container.xl"} paddingBottom={"20px"}>
-        <Box
-          textAlign="center"
-          paddingTop="20px"
-          paddingBottom="40px"
-          marginBottom="20px"
-        >
-          <Text
-            fontSize="3xl"
-            color="white"
-            lineHeight="tall"
-            textAlign="center"
-            as="b"
-          >
-            Customers can't stop raving about their growth 🔥
-          </Text>
-        </Box>
-
-        {/* TODO: refactor these review cards to be their own component */}
-        <SimpleGrid
-          columns={{ base: 1, md: 3 }}
-          spacing="40px"
-          marginTop="20px"
-        >
-          <Card>
-            <CardHeader marginBottom={"1px"} paddingBottom="8px">
-              <Heading size="lg">⭐ ⭐ ⭐ ⭐ ⭐</Heading>
-            </CardHeader>
-            <CardBody marginTop={"1px"} paddingTop="8px">
-              <Text lineHeight="tall" fontSize="md">
-                Photo AI is just fantastic! I take amazing photos of my wife,
-                family and friends. As a photographer I use it to test ideas
-                before creating a real photoshoot. I strongly recommend
-              </Text>
-            </CardBody>
-            <Divider color="gray" />
-            <CardFooter>
-              <Flex width="100%">
-                <Box flex="1">
-                  <Text as="b">Customer</Text>
-                </Box>
-                <Spacer />
-                <Box>
-                  <Badge ml="1" colorScheme="green">
-                    VERIFIED PURCHASE
-                  </Badge>
-                </Box>
-              </Flex>
-            </CardFooter>
-          </Card>
-
-          <Card>
-            <CardHeader marginBottom={"1px"} paddingBottom="8px">
-              <Heading size="lg">⭐ ⭐ ⭐ ⭐ ⭐</Heading>
-            </CardHeader>
-            <CardBody marginTop={"1px"} paddingTop="8px">
-              <Text lineHeight="tall" fontSize="md">
-                Cool AI tool for image generation! I could create a lot of truly
-                amazing pictures in different locations with different outfits!
-                All my friends were surprised and loved my pictures!
-              </Text>
-            </CardBody>
-            <Divider color="gray" />
-            <CardFooter>
-              <Flex width="100%">
-                <Box flex="1">
-                  <Text as="b">Customer</Text>
-                </Box>
-                <Spacer />
-                <Box>
-                  <Badge ml="1" colorScheme="green">
-                    VERIFIED PURCHASE
-                  </Badge>
-                </Box>
-              </Flex>
-            </CardFooter>
-          </Card>
-
-          <Card>
-            <CardHeader marginBottom={"1px"} paddingBottom="8px">
-              <Heading size="lg">⭐ ⭐ ⭐ ⭐ ⭐</Heading>
-            </CardHeader>
-            <CardBody marginTop={"1px"} paddingTop="8px">
-              <Text lineHeight="tall" fontSize="md">
-                Good input = good output. Very fun! Took me some effort to get
-                the models to feel accurate but once I got the right input it
-                was amazing. Photo AI was very responsive to my questions.
-              </Text>
-            </CardBody>
-            <Divider color="gray" />
-            <CardFooter>
-              <Flex width="100%">
-                <Box flex="1">
-                  <Text as="b">Customer</Text>
-                </Box>
-                <Spacer />
-                <Box>
-                  <Badge ml="1" colorScheme="green">
-                    VERIFIED PURCHASE
-                  </Badge>
-                </Box>
-              </Flex>
-            </CardFooter>
-          </Card>
-        </SimpleGrid>
-      </Container>
+      <Testimonials />
 
       <Container
         minH={"200px"}
@@ -205,24 +64,7 @@ export default function Home() {
         borderBottom="1px solid black"
         textAlign="center"
       >
-        <Container>
-          <Button
-            mt="3"
-            color="black"
-            bg="green.400"
-            px={6}
-            _hover={{
-              bg: "green.800",
-              color: "white",
-            }}
-            size="lg"
-          >
-            Start My Free Trial
-          </Button>
-          <Text color="#bdbdbd" mb="8">
-            Cancel anytime
-          </Text>
-        </Container>
+
         <Text
           fontSize="3xl"
           color="white"

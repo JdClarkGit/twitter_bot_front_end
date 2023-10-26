@@ -29,7 +29,7 @@ export default function CallToActionWithAnnotation() {
         >
           <br />
           Ready to start growing <br />
-          <Text as={"span"} color={"green.400"}>
+          <Text as={"span"} color="#26a7de">
             your audience? 🤑
           </Text>
         </Heading>
@@ -47,18 +47,14 @@ export default function CallToActionWithAnnotation() {
           position={"relative"}
         >
           <Button
-            color="black"
-            bg="green.400"
+            colorScheme="twitter"
             px={6}
-            _hover={{
-              bg: "green.800",
-              color: "white",
-            }}
-            size="lg"
+            minW="350px"
+            minH="50px"
           >
             Get Started
           </Button>
-          <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
+          <Button variant={"link"} colorScheme={"twitter"} size={"sm"}>
             Learn more
           </Button>
           <Box>

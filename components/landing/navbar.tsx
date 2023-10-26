@@ -27,10 +27,12 @@ export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box width="100vw">
+    <Box width="100vw" position="sticky"
+    top="0" zIndex="100"
+    bgGradient="linear(to-t, black, #001f3f, blue.900)"
+    >
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        color={'white'}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -57,7 +59,7 @@ export default function WithSubnavigation() {
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
+            color={'white'}
             fontSize="3xl"
           >
             EasyEngage.ai
@@ -80,6 +82,7 @@ export default function WithSubnavigation() {
             fontWeight={400}
             variant={"link"}
             href={"/dashboard"}
+            color="white"
           >
             Log In
           </Button>
@@ -89,11 +92,8 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            colorScheme="green"
+            colorScheme="twitter"
             href={"/signup"}
-            _hover={{
-              bg: "green.300",
-            }}
           >
             Sign Up
           </Button>
@@ -124,11 +124,14 @@ const DesktopNav = () => {
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
-                color={linkColor}
+                color={'white'}
                 _hover={{
                   textDecoration: "none",
-                  color: linkHoverColor,
+                  color: 'white',
                 }}
+                h="100%"
+                display="flex"
+      alignItems="center"
               >
                 {navItem.label}
               </Box>
@@ -174,6 +177,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
             transition={"all .3s ease"}
             _groupHover={{ color: "green.400" }}
             fontWeight={500}
+            color="#26a7de"
           >
             {label}
           </Text>
