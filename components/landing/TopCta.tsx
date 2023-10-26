@@ -32,10 +32,11 @@ const TopCta = () => {
   `
 
 
-    return (<Container
+    return ( <>
+       
+    <Container
         minH={"400px"}
         maxW={"container.lg"}
-        paddingBottom={"80px"}
         paddingTop={"80px"}
       >
         <Text
@@ -91,7 +92,8 @@ const TopCta = () => {
             Learn more.
           </Link>
         </Center>
-      </Container>)
+      </Container>
+    </>)
 }
 
 export default TopCta;
