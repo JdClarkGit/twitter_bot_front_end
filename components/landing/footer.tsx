@@ -79,9 +79,11 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export default function LandingPageFooter() {
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
-      color={useColorModeValue("gray.700", "gray.200")}
       width="100vw"
+      borderTop="1px"
+      borderColor="gray.600"
+      color="white"
+      boxShadow="0px -10px 40px rgba(255, 255, 255, 0.3)"
     >
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
@@ -149,17 +151,13 @@ export default function LandingPageFooter() {
               <Input
                 placeholder={"Your email address"}
                 bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
-                border={0}
+                border="1px solid white"
                 _focus={{
                   bg: "whiteAlpha.300",
                 }}
               />
               <IconButton
-                bg={useColorModeValue("green.400", "green.800")}
-                color={useColorModeValue("white", "gray.800")}
-                _hover={{
-                  bg: "green.600",
-                }}
+                colorScheme="twitter"
                 aria-label="Subscribe"
                 icon={<BiMailSend />}
               />

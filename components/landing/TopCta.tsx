@@ -59,7 +59,7 @@ const TopCta = () => {
       backgroundSize= "200% auto"
       animation= {`${animation} 4s ease-in-out infinite alternate`}
     >
-  Powered by AI.
+  Powered by AI. 🖖
     </Text>
         <br />
         {/* <Text

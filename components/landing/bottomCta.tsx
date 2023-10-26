@@ -20,6 +20,7 @@ export default function CallToActionWithAnnotation() {
         textAlign={"center"}
         spacing={{ base: 8, md: 12 }}
         py={{ base: 20, md: 12 }}
+        marginBottom="50px"
       >
         <Heading
           fontWeight={600}
