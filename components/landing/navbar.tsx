@@ -27,12 +27,15 @@ export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box width="100vw" position="sticky"
-    top="0" zIndex="100"
-    bgGradient="linear(to-t, black, #001f3f, blue.900)"
+    <Box
+      width="100vw"
+      position="sticky"
+      top="0"
+      zIndex="100"
+      bgGradient="linear(to-r, black 10%, blue.800 90%)"
     >
       <Flex
-        color={'white'}
+        color={"white"}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -59,7 +62,7 @@ export default function WithSubnavigation() {
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
-            color={'white'}
+            color={"white"}
             fontSize="3xl"
           >
             EasyEngage.ai
@@ -94,6 +97,10 @@ export default function WithSubnavigation() {
             color={"white"}
             colorScheme="twitter"
             href={"/signup"}
+            _hover={{
+              backgroundColor: "white",
+              color: "blue",
+            }}
           >
             Sign Up
           </Button>
@@ -124,14 +131,14 @@ const DesktopNav = () => {
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
-                color={'white'}
+                color={"white"}
                 _hover={{
                   textDecoration: "none",
-                  color: 'white',
+                  color: "white",
                 }}
                 h="100%"
                 display="flex"
-      alignItems="center"
+                alignItems="center"
               >
                 {navItem.label}
               </Box>
@@ -290,16 +297,16 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: "ASdfalkm",
+    label: "Benefits",
     children: [
       {
-        label: "ASdflkamsdf",
-        subLabel: "askdjnf aksjdfn kajsdf n nasdj",
+        label: "Gain more followers",
+        subLabel: "See how our AI agent can build your brand",
         href: "#",
       },
       {
-        label: "ASDfalk  laksdf  as",
-        subLabel: "Some marketing bullshit",
+        label: "Be yourself",
+        subLabel: "Our AI tweets original content without the recycled garbage",
         href: "#",
       },
     ],

@@ -52,6 +52,10 @@ export default function CallToActionWithAnnotation() {
             px={6}
             minW="350px"
             minH="50px"
+            _hover={{
+              backgroundColor: "white",
+              color: "blue",
+            }}
           >
             Get Started
           </Button>
