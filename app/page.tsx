@@ -35,12 +35,15 @@ import Navbar from "../components/landing/navbar";
 import SchedulingFeature from "../components/landing/SchedulingFeature";
 import StatsGridWithImage from "@/components/landing/StatsGridWithImage";
 import TopCta from "../components/landing/TopCta";
-import Testimonials from "../components/landing/Testimonials"
-import Faq from "../components/landing/Faq"
+import Testimonials from "../components/landing/Testimonials";
+import Faq from "../components/landing/Faq";
 
 export default function Home() {
   return (
-    <Box bgGradient="linear(to-br, black, blue.800, black)" position={'relative'}>
+    <Box
+      bgGradient="linear(to-br, black, blue.800, black)"
+      position={"relative"}
+    >
       <Navbar />
 
       <TopCta />
@@ -240,7 +243,7 @@ export default function Home() {
         </Grid>
       </Container> */}
 
-      <Faq/>
+      <Faq />
 
       <Container maxW={"container.xl"}>
         <BottomCta />

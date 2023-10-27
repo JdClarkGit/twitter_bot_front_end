@@ -1,4 +1,4 @@
-"use client";
+"use strict";
 
 import {
   Box,
@@ -23,16 +23,26 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
+interface NavItem {
+  label: string;
+  subLabel?: string;
+  children?: Array<NavItem>;
+  href?: string;
+}
+
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box width="100vw" position="sticky"
-    top="0" zIndex="100"
-    bgGradient="linear(to-t, black, #001f3f, blue.900)"
+    <Box
+      width="100vw"
+      position="sticky"
+      top="0"
+      zIndex="100"
+      bgGradient="linear(to-r, black 10%, blue.800 90%)"
     >
       <Flex
-        color={'white'}
+        color={"white"}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -59,7 +69,7 @@ export default function WithSubnavigation() {
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
-            color={'white'}
+            color={"white"}
             fontSize="3xl"
           >
             EasyEngage.ai
@@ -94,6 +104,10 @@ export default function WithSubnavigation() {
             color={"white"}
             colorScheme="twitter"
             href={"/signup"}
+            _hover={{
+              backgroundColor: "white",
+              color: "blue",
+            }}
           >
             Sign Up
           </Button>
@@ -124,14 +138,40 @@ const DesktopNav = () => {
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
-                color={'white'}
+                color={
+                  navItem.label === "Inspiration" ||
+                  navItem.label === "Benefits"
+                    ? "#2976B8"
+                    : "white"
+                }
+                borderColor={
+                  navItem.label === "Inspiration" ||
+                  navItem.label === "Benefits"
+                    ? "#2976B8"
+                    : "transparent"
+                }
+                // borderWidth={
+                //   navItem.label === "Inspiration" ||
+                //   navItem.label === "Benefits"
+                //     ? "1px"
+                //     : "0"
+                // }
                 _hover={{
                   textDecoration: "none",
-                  color: 'white',
+                  color:
+                    navItem.label === "Inspiration" ||
+                    navItem.label === "Benefits"
+                      ? "white"
+                      : linkHoverColor,
+                  borderColor:
+                    navItem.label === "Inspiration" ||
+                    navItem.label === "Benefits"
+                      ? "white"
+                      : "transparent",
                 }}
                 h="100%"
                 display="flex"
-      alignItems="center"
+                alignItems="center"
               >
                 {navItem.label}
               </Box>
@@ -160,7 +200,15 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({
+  label,
+  href,
+  subLabel,
+}: {
+  label: string;
+  href: string;
+  subLabel?: string;
+}) => {
   return (
     <Box
       as="a"
@@ -181,7 +229,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           >
             {label}
           </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
+          <Text fontSize={"sm"}>{subLabel || ""}</Text>
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -218,12 +266,11 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
-      <Box
+      <Flex
         py={2}
-        as="a"
-        href={href ?? "#"}
-        justifyContent="space-between"
-        alignItems="center"
+        as={Button}
+        justify={"space-between"}
+        align={"center"}
         _hover={{
           textDecoration: "none",
         }}
@@ -243,9 +290,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
             h={6}
           />
         )}
-      </Box>
+      </Flex>
 
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
+      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0.5rem" }}>
         <Stack
           mt={2}
           pl={4}
@@ -253,11 +300,39 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           borderStyle={"solid"}
           borderColor={useColorModeValue("gray.200", "gray.700")}
           align={"start"}
+          fontSize={"sm"}
         >
           {children &&
-            children.map((child) => (
+            children.map((child: NavItem) => (
               <Box as="a" key={child.label} py={2} href={child.href}>
-                {child.label}
+                {child.newItem && (
+                  <Text
+                    color={useColorModeValue("blue.800", "blue.200")}
+                    mr={2}
+                  >
+                    NEW
+                  </Text>
+                )}
+                <Box display="flex" alignItems="center">
+                  <Text
+                    href={child.href}
+                    as="a"
+                    display="block"
+                    transition="all 0.2s"
+                    _hover={{ color: "gray.500" }}
+                    fontWeight="600"
+                  >
+                    {child.label}
+                  </Text>
+                  {child.subLabel && (
+                    <Text
+                      color={useColorModeValue("blue.800", "blue.200")}
+                      ml={2}
+                    >
+                      {child.subLabel}
+                    </Text>
+                  )}
+                </Box>
               </Box>
             ))}
         </Stack>
@@ -266,40 +341,63 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   );
 };
 
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Inspiration",
     children: [
       {
         label: "See a Product Demo",
-        subLabel: "See a demo to blah blah blah",
+        subLabel: "See a demo of EasyEngage.ai's capabilities",
         href: "#",
       },
       {
         label: "Success stories",
-        subLabel: "See success stories of some up-and-coming creators",
+        subLabel: "Discover how businesses thrive with EasyEngage.ai",
         href: "#",
       },
     ],
   },
   {
-    label: "ASdfalkm",
+    label: "Benefits",
     children: [
       {
-        label: "ASdflkamsdf",
-        subLabel: "askdjnf aksjdfn kajsdf n nasdj",
+        label: "Gain more followers",
+        subLabel: "Let EasyEngage.ai's AI agent enhance your online presence",
         href: "#",
       },
       {
-        label: "ASDfalk  laksdf  as",
-        subLabel: "Some marketing bullshit",
+        label: "Be yourself",
+        subLabel: "Experience genuine content creation without redundancy",
+        href: "#",
+      },
+    ],
+  },
+  {
+    label: "Products",
+    children: [
+      {
+        label: "Product A",
+        subLabel: "Discover the benefits of Product A",
+        href: "#",
+      },
+      {
+        label: "Product B",
+        subLabel: "Learn how Product B can enhance your business",
+        href: "#",
+      },
+    ],
+  },
+  {
+    label: "Company",
+    children: [
+      {
+        label: "About Us",
+        subLabel: "Learn more about EasyEngage.ai",
+        href: "#",
+      },
+      {
+        label: "Careers",
+        subLabel: "Join our passionate team",
         href: "#",
       },
     ],
