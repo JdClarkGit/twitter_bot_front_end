@@ -200,6 +200,52 @@ export default function DashboardPage() {
           AI generated Tweet ideas 💡 for you based on your previous content
         </Heading>
         {/* bgGradient="linear(to-br, black, blue.700, black) */}
+        <Card width="30%" marginRight="2rem">
+          <CardHeader marginBottom={"1px"} paddingBottom="8px">
+            <Heading size="lg">AI Generated Topic # 1</Heading>
+          </CardHeader>
+          <CardBody marginTop={"1px"} paddingTop="8px">
+            <Text lineHeight="tall" fontSize="md">
+              Idea 1
+            </Text>
+            <Button
+              bg="#2976B8"
+              mb={5}
+              onClick={() => setInputValue("Default feedback message.")}
+            >
+              Edit
+            </Button>
+            <Input
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Feedback..."
+            />
+          </CardBody>
+          <Divider color="white" />
+          <CardFooter>
+            <Flex width="30%">
+              <Box flex="1">
+                <Button
+                  background="#2976B8"
+                  as="b"
+                  _hover={{
+                    bgColor: "white",
+                    color: "black",
+                    cursor: "pointer",
+                  }}
+                >
+                  Tweet!
+                </Button>
+              </Box>
+              <Spacer />
+              <Box>
+                <Badge ml="2" colorScheme="green">
+                  Verified Original
+                </Badge>
+              </Box>
+            </Flex>
+          </CardFooter>
+        </Card>
         <Card width="30%">
           <CardHeader marginBottom={"1px"} paddingBottom="8px">
             <Heading size="lg">AI Generated Topic # 1</Heading>

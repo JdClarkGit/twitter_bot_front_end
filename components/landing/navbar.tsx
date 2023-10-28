@@ -141,14 +141,14 @@ const DesktopNav = () => {
                 color={
                   navItem.label === "Inspiration" ||
                   navItem.label === "Benefits"
-                    ? "#2976B8"
-                    : "white"
+                    ? "#3BA1F2"
+                    : "#3BA1F2"
                 }
                 borderColor={
                   navItem.label === "Inspiration" ||
                   navItem.label === "Benefits"
                     ? "#2976B8"
-                    : "transparent"
+                    : "white"
                 }
                 _hover={{
                   textDecoration: "none",
@@ -211,19 +211,21 @@ const DesktopSubNav = ({
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("green.50", "gray.900") }}
+      _hover={{ bg: useColorModeValue("purple.200", "gray.900") }}
     >
       <Stack direction={"row"} align={"center"}>
-        <Box>
+        <Box background="white" p={1} borderRadius="md">
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "green.400" }}
+            _groupHover={{ color: "purple.400" }}
             fontWeight={500}
             color="#26a7de"
           >
             {label}
           </Text>
-          <Text fontSize={"sm"}>{subLabel || ""}</Text>
+          <Text fontSize={"sm"} color={"purple"}>
+            {subLabel || ""}
+          </Text>
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -234,7 +236,7 @@ const DesktopSubNav = ({
           align={"center"}
           flex={1}
         >
-          <Icon color={"green.400"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"purple.400"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Box>
