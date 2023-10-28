@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,9 +13,7 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faHome, faPlus, faFileAlt, faUser, faCog, faSignOutAlt);
-
 library.add(faSearch); // Adds the search icon to the library
-import React from "react";
 import Link from "next/link";
 import {
   Box,
@@ -34,13 +35,14 @@ import {
 } from "@chakra-ui/react";
 
 export default function DashboardPage() {
+  const [inputValue, setInputValue] = useState("");
   const menuItems = [
-    { alt: "Home", icon: faHome, href: null },
-    { alt: "Create", icon: faPlus, href: "/create" },
-    { alt: "Drafts", icon: faFileAlt, href: "/notes" },
-    { alt: "Profile", icon: faUser, href: "/profile" },
-    { alt: "Settings", icon: faCog, href: "/settings" },
-    { alt: "Log Out", icon: faSignOutAlt, href: "/" },
+    { alt: "", icon: faHome, href: null },
+    { alt: "", icon: faPlus, href: "/create" },
+    { alt: "", icon: faFileAlt, href: "/notes" },
+    { alt: "", icon: faUser, href: "/profile" },
+    { alt: "", icon: faCog, href: "/settings" },
+    { alt: "", icon: faSignOutAlt, href: "/" },
   ];
 
   return (
@@ -52,22 +54,23 @@ export default function DashboardPage() {
       {/* Sidebar Menu */}
       <Box
         height="100%"
-        width="250px"
+        width="150px"
         paddingY={5}
         borderRight="1px solid gray "
       >
         {menuItems.map((item, index) => (
-          <Box key={index} mb={35} textAlign="center">
+          <Box key={index} mb={2} textAlign="center">
             {item.href ? (
               <Button
                 variant="ghost"
+                size="lg"
                 background="none"
                 cursor="pointer"
                 color="white"
-                width="230px"
+                width="100px"
                 height="100px"
                 _hover={{
-                  bgColor: "#64B828",
+                  bgColor: "#2976B8",
                   cursor: "pointer",
                 }}
               >
@@ -75,7 +78,7 @@ export default function DashboardPage() {
                 <LinkOverlay as={Link} href={item.href}>
                   <FontAwesomeIcon
                     icon={item.icon}
-                    size="sm"
+                    size="xl"
                     className="mr-2"
                   />
                   {item.alt}
@@ -85,12 +88,13 @@ export default function DashboardPage() {
               <Button
                 variant="ghost"
                 background="none"
+                size="lg"
                 cursor="pointer"
                 color="white"
-                width="230px"
+                width="100px"
                 height="100px"
                 _hover={{
-                  bgColor: "#64B828",
+                  bgColor: "#2976B8",
                   color: "white",
                   cursor: "pointer",
                 }}
@@ -134,18 +138,18 @@ export default function DashboardPage() {
         </Flex>
 
         {/* Main Content Area */}
-        <Flex wrap="wrap" gap={6} mt={4}>
+        <Flex wrap="wrap" gap={6} mt={4} justifyContent="center">
           {/* CRM Link */}
           <LinkBox
             as="div"
-            w="1/2"
+            w="30%"
             p={4}
             borderWidth="1px"
             borderRadius="md"
             boxShadow="md"
             textAlign="center"
             _hover={{ bgColor: "white", color: "#256861", cursor: "pointer" }}
-            bg="#64B828"
+            bg="#2976B8"
             color="white"
           >
             <Heading size="md">
@@ -163,14 +167,14 @@ export default function DashboardPage() {
           {/* Recent Notes */}
           <LinkBox
             as="div"
-            w="1/3"
+            w="30%"
             p={4}
             borderWidth="1px"
             borderRadius="md"
             boxShadow="md"
             textAlign="center"
-            _hover={{ bgColor: "white", color: "black", cursor: "pointer" }}
-            bg="#64B828"
+            _hover={{ bgColor: "black", color: "white", cursor: "pointer" }}
+            bg="#2976B8"
             color="white"
           >
             <Heading size="md" mb={3}>
@@ -195,7 +199,8 @@ export default function DashboardPage() {
         >
           AI generated Tweet ideas 💡 for you based on your previous content
         </Heading>
-        <Card width="30%" bgGradient="linear(to-br, black, blue.700, black)">
+        {/* bgGradient="linear(to-br, black, blue.700, black) */}
+        <Card width="30%">
           <CardHeader marginBottom={"1px"} paddingBottom="8px">
             <Heading size="lg">AI Generated Topic # 1</Heading>
           </CardHeader>
@@ -203,15 +208,25 @@ export default function DashboardPage() {
             <Text lineHeight="tall" fontSize="md">
               Idea 1
             </Text>
-            <Button>Edit</Button>
-            <Input placeholder="Feedback..." />
+            <Button
+              bg="#2976B8"
+              mb={5}
+              onClick={() => setInputValue("Default feedback message.")}
+            >
+              Edit
+            </Button>
+            <Input
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Feedback..."
+            />
           </CardBody>
           <Divider color="white" />
           <CardFooter>
             <Flex width="30%">
               <Box flex="1">
                 <Button
-                  background="#50931F"
+                  background="#2976B8"
                   as="b"
                   _hover={{
                     bgColor: "white",
