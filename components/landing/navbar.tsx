@@ -150,12 +150,6 @@ const DesktopNav = () => {
                     ? "#2976B8"
                     : "transparent"
                 }
-                // borderWidth={
-                //   navItem.label === "Inspiration" ||
-                //   navItem.label === "Benefits"
-                //     ? "1px"
-                //     : "0"
-                // }
                 _hover={{
                   textDecoration: "none",
                   color:
