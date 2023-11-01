@@ -41,8 +41,6 @@ const TopCta = () => {
           color="white"
           lineHeight="tall"
           textAlign="left"
-          // fontWeight="extrabold"
-          // fontFamily={"heading"}
         >
           Supercharge your Twitter growth and monetize your expanding audience.
         </Text>
@@ -59,16 +57,6 @@ const TopCta = () => {
           Powered by AI. 🖖
         </Text>
         <br />
-        {/* <Text
-          fontSize="5xl"
-          color="white"
-          lineHeight="tall"
-          textAlign="left"
-          fontWeight="bold"
-          fontFamily={'heading'}
-        >
-          Powered by AI
-        </Text> */}
         <br />
         <Center>
           <Button
@@ -79,10 +67,6 @@ const TopCta = () => {
             paddingLeft="40px"
             minW="400px"
             minH="50px"
-            _hover={{
-              backgroundColor: "white",
-              color: "blue",
-            }}
           >
             <Text fontSize="2xl">Let's go!</Text>
           </Button>

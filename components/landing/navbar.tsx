@@ -30,6 +30,13 @@ interface NavItem {
   href?: string;
 }
 
+import {
+  SignInButton,
+  SignOutButton,
+  SignUpButton,
+  useClerk,
+} from "@clerk/nextjs";
+
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -86,6 +93,7 @@ export default function WithSubnavigation() {
           direction={"row"}
           spacing={6}
         >
+          <SignInButton afterSignInUrl="/dashboard">
           <Button
             as={"a"}
             fontSize={"sm"}
@@ -96,21 +104,20 @@ export default function WithSubnavigation() {
           >
             Log In
           </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            colorScheme="twitter"
-            href={"/signup"}
-            _hover={{
-              backgroundColor: "white",
-              color: "blue",
-            }}
-          >
-            Sign Up
-          </Button>
+          </SignInButton>
+          <SignUpButton afterSignUpUrl={'/dashboard'}>
+            <Button
+              as={"a"}
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"white"}
+              colorScheme="twitter"
+              cursor="pointer"
+            >
+              Sign Up
+            </Button>
+          </SignUpButton>
         </Stack>
       </Flex>
 
