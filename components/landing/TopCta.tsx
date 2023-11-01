@@ -88,7 +88,7 @@ const TopCta = () => {
           </Button>
         </Center>
         <Center marginTop="20px">
-          <Link textAlign="left" color="twitter">
+          <Link textAlign="left" color="white">
             Learn more.
           </Link>
         </Center>
