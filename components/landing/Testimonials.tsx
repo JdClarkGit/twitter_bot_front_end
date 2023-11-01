@@ -103,8 +103,8 @@ export default function WithSpeechBubbles() {
     <Box marginTop="40px" marginBottom="40px">
       <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={'center'}>
-          <Heading fontFamily={'heading'} color='white'>Our Clients Speak</Heading>
-          <Text fontFamily={'heading'} color='white' marginTop="5px">Customers can't stop raving about their growth 🔥</Text>
+          <Heading fontFamily={'heading'} color='white'>Customers can't stop raving about their growth 🔥</Heading>
+          <Text fontFamily={'heading'} color='white' marginTop="5px">Listen to what our customers have to say.</Text>
         </Stack>
         <Stack
           direction={{ base: 'column', md: 'row' }}
@@ -124,7 +124,7 @@ export default function WithSpeechBubbles() {
                 'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
               }
               name={'Jane Cooper'}
-              title={'CEO at ABC Corporation'}
+              title={'Fitness Influencer'}
             />
           </Testimonial>
           <Testimonial>
