@@ -94,17 +94,17 @@ export default function WithSubnavigation() {
           spacing={6}
         >
           <SignInButton afterSignInUrl="/fuck">
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            color="white"
-          >
-            Log In
-          </Button>
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              color="white"
+            >
+              Log In
+            </Button>
           </SignInButton>
-          <SignUpButton afterSignUpUrl={'/my-dashboard'}>
+          <SignUpButton afterSignUpUrl={"/my-dashboard"}>
             <Button
               as={"a"}
               display={{ base: "none", md: "inline-flex" }}

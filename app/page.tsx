@@ -1,32 +1,9 @@
 "use client";
 import BaseDemoVideo from "@/components/BaseDemoVideo";
 import TweetBotHeader from "@/components/TweetBotHeader";
-import LogInBtn from "@/components/LogInBtn";
 // import socialboostImage from "./Desktop/Socialboost/socialboostImage.png";
 // import DemoLogo from "@components/DemoLogo";
-import {
-  Badge,
-  Box,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Container,
-  Flex,
-  Grid,
-  Heading,
-  SimpleGrid,
-  Text,
-  Spacer,
-  Divider,
-  Image,
-  Center,
-  Button,
-  Stack,
-  Icon,
-  createIcon,
-  Link,
-} from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { CalendarIcon } from "@chakra-ui/icons";
 
 import BottomCta from "../components/landing/bottomCta";
@@ -38,31 +15,34 @@ import TopCta from "../components/landing/TopCta";
 import Testimonials from "../components/landing/Testimonials";
 import Faq from "../components/landing/Faq";
 
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <Box
-      bgGradient="linear(to-br, black, blue.800, black)"
-      position={"relative"}
-      minWidth="100vw" // Ensure gradient covers the entire viewport width
-      overflowX="hidden" // Potentially prevent horizontal scroll
-    >
-      <Navbar />
+    <>
+      <Box
+        bgGradient="linear(to-br, black, blue.800, black)"
+        position={"relative"}
+        minWidth="100vw" // Ensure gradient covers the entire viewport width
+        overflowX="hidden" // Potentially prevent horizontal scroll
+      >
+        <Navbar />
+        <TopCta />
 
-      <TopCta />
+        <StatsGridWithImage />
 
-      <StatsGridWithImage />
+        <SchedulingFeature />
 
-      <SchedulingFeature />
+        <Testimonials />
 
-      <Testimonials />
+        <Faq />
 
-      <Faq />
+        <Container maxW={"container.xl"}>
+          <BottomCta />
+        </Container>
 
-      <Container maxW={"container.xl"}>
-        <BottomCta />
-      </Container>
-
-      <LandingPageFooter />
-    </Box>
+        <LandingPageFooter />
+      </Box>
+    </>
   );
 }
