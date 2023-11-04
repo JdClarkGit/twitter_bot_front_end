@@ -1,9 +1,12 @@
 "use strict";
 
+import logo from "./img/logo.png";
+
 import {
   Box,
   Flex,
   Text,
+  Image,
   IconButton,
   Button,
   Stack,
@@ -85,7 +88,13 @@ export default function WithSubnavigation() {
               color={"white"}
               fontSize="3xl"
             >
-              EasyEngage.ai
+              <Image
+                src={logo.src}
+                htmlWidth="170px" // Adjust the width as needed
+                objectFit="contain"
+                textAlign={useBreakpointValue({ base: "center", md: "left" })}
+                cursor="pointer"
+              />
             </Text>
 
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -99,18 +108,19 @@ export default function WithSubnavigation() {
             direction={"row"}
             spacing={6}
           >
-            <SignInButton afterSignInUrl="/fuck">
+            <Flex>
               <Button
                 as={"a"}
                 fontSize={"sm"}
                 fontWeight={400}
                 variant={"link"}
                 color="white"
+                cursor="pointer"
               >
                 Log In
               </Button>
-            </SignInButton>
-            <SignUpButton afterSignUpUrl={"/my-dashboard"}>
+            </Flex>
+            <Flex>
               <Button
                 as={"a"}
                 display={{ base: "none", md: "inline-flex" }}
@@ -122,7 +132,7 @@ export default function WithSubnavigation() {
               >
                 Sign Up
               </Button>
-            </SignUpButton>
+            </Flex>
           </Stack>
         </Flex>
 
