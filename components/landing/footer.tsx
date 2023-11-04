@@ -1,9 +1,13 @@
 "use client";
 
+import logo from "./img/logo.png";
+
 import {
   Box,
   chakra,
   Container,
+  Flex,
+  Image,
   SimpleGrid,
   Stack,
   Text,
@@ -11,6 +15,7 @@ import {
   Input,
   IconButton,
   useColorModeValue,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
@@ -92,7 +97,28 @@ export default function LandingPageFooter() {
         >
           <Stack spacing={6}>
             <Box>
-              <Logo color={useColorModeValue("gray.700", "white")} />
+              <Flex
+                flex={{ base: 1 }}
+                justify={{ base: "center", md: "start" }}
+              >
+                <Text
+                  textAlign={useBreakpointValue({ base: "center", md: "left" })}
+                  fontFamily={"heading"}
+                  color={"white"}
+                  fontSize="3xl"
+                >
+                  <Image
+                    src={logo.src}
+                    htmlWidth="170px" // Adjust the width as needed
+                    objectFit="contain"
+                    textAlign={useBreakpointValue({
+                      base: "center",
+                      md: "left",
+                    })}
+                    cursor="pointer"
+                  />
+                </Text>
+              </Flex>
             </Box>
             <Text fontSize={"sm"}>
               © 2023 easyengage.ai LLC. All rights reserved
