@@ -80,7 +80,7 @@ export default function CallToActionWithAnnotation() {
               transform={"rotate(10deg)"}
               color="white"
             >
-              Starting at $15/mo
+              Starting at $49.97/mo
             </Text>
           </Box>
         </Stack>
