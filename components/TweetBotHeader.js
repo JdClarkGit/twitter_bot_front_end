@@ -8,7 +8,7 @@ export default function TweetBotHeader() {
     <div className="text-right font-bold flex flex-row items-end">
       <h1 className="text-[30px] my-2 text-blue-600">
         <img className="mr-2" />
-        SocialSkyrocket
+        EasyEngage
       </h1>
     </div>
   );

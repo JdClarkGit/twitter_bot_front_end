@@ -33,16 +33,13 @@ interface NavItem {
   href?: string;
 }
 
-import {
-  ClerkProvider,
-  SignInButton,
-  SignOutButton,
-  SignUpButton,
-  useClerk,
-} from "@clerk/nextjs";
+import { ClerkProvider, useClerk } from "@clerk/nextjs";
+
+import { SignInButton } from "@clerk/nextjs";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const { openSignIn, openSignUp } = useClerk();
 
   return (
     <ClerkProvider>
@@ -110,24 +107,30 @@ export default function WithSubnavigation() {
           >
             <Flex>
               <Button
-                as={"a"}
+                onClick={() => openSignIn()}
                 fontSize={"sm"}
                 fontWeight={400}
                 variant={"link"}
                 color="white"
+                _hover={{
+                  textDecoration: "none",
+                  color: "blue.200", // example hover style
+                }}
                 cursor="pointer"
               >
                 Log In
               </Button>
             </Flex>
-            <Flex>
+            <Flex display={{ base: "none", md: "flex" }}>
               <Button
-                as={"a"}
-                display={{ base: "none", md: "inline-flex" }}
+                onClick={() => openSignUp()}
                 fontSize={"sm"}
                 fontWeight={600}
-                color={"white"}
-                colorScheme="twitter"
+                color="white"
+                bg="twitter.500" // use bg for background color with Chakra UI
+                _hover={{
+                  bg: "twitter.600", // example hover style
+                }}
                 cursor="pointer"
               >
                 Sign Up
