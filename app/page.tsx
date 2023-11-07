@@ -15,8 +15,6 @@ import TopCta from "../components/landing/TopCta";
 import Testimonials from "../components/landing/Testimonials";
 import Faq from "../components/landing/Faq";
 
-import Link from "next/link";
-
 export default function Home() {
   return (
     <>
@@ -26,7 +24,7 @@ export default function Home() {
         minWidth="100vw" // Ensure gradient covers the entire viewport width
         overflowX="hidden" // Potentially prevent horizontal scroll
       >
-        <Navbar />p
+        <Navbar />
 
         <TopCta />
 
