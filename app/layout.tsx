@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Providers } from "./providers";
-import BaseClerkProvider from "@/providers/BaseClerkProvider";
+import { ClerkProvider } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs";
+import AuthProvider from "@/providers/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,12 +16,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { userId } = auth();
+
   return (
-    // Fixed Hydration Issue by wrapping in an HOC. ClerkProvider only mounts if there is a userId
-    <BaseClerkProvider>
-      <div className={inter.className}>
-        <Providers>{children}</Providers>
-      </div>
-    </BaseClerkProvider>
+    <ClerkProvider>
+      <AuthProvider userId={String(userId) as string}>
+        <div className={inter.className}>{children}</div>
+      </AuthProvider>
+    </ClerkProvider>
   );
 }
