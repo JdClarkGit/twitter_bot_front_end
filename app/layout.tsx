@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs";
 import AuthProvider from "@/providers/AuthProvider";
+import { Providers } from "../providers/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <AuthProvider userId={String(userId) as string}>
-        <div className={inter.className}>{children}</div>
+        <Providers>
+          <div className={inter.className}>{children}</div>
+        </Providers>
       </AuthProvider>
     </ClerkProvider>
   );

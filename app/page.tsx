@@ -26,7 +26,8 @@ export default function Home() {
         minWidth="100vw" // Ensure gradient covers the entire viewport width
         overflowX="hidden" // Potentially prevent horizontal scroll
       >
-        <Navbar />
+        <Navbar />p
+
         <TopCta />
 
         <StatsGridWithImage />

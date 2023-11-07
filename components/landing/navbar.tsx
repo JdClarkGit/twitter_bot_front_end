@@ -1,6 +1,9 @@
+/* eslint-disable jsx-a11y/alt-text */
 "use strict";
 
 import logo from "./img/logo.png";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import {
   Box,
@@ -33,13 +36,16 @@ interface NavItem {
   href?: string;
 }
 
-import { ClerkProvider, useClerk } from "@clerk/nextjs";
-
-import { SignInButton } from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
-  const { openSignIn, openSignUp } = useClerk();
+
+  const router = useRouter();
+
+  function openSignIn() {
+    router.push("/sign-in");
+  }
 
   return (
     <ClerkProvider>
@@ -105,6 +111,10 @@ export default function WithSubnavigation() {
             direction={"row"}
             spacing={6}
           >
+            <Link href={"/sign-in"}>Sign In</Link>
+
+            <Link href={"/sign-up"}>Sign Up</Link>
+
             <Flex>
               <Button
                 onClick={() => openSignIn()}
@@ -114,7 +124,7 @@ export default function WithSubnavigation() {
                 color="white"
                 _hover={{
                   textDecoration: "none",
-                  color: "blue.200", // example hover style
+                  color: "blue.200",
                 }}
                 cursor="pointer"
               >
