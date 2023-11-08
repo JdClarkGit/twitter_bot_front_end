@@ -15,8 +15,6 @@ import TopCta from "../components/landing/TopCta";
 import Testimonials from "../components/landing/Testimonials";
 import Faq from "../components/landing/Faq";
 
-import Link from "next/link";
-
 export default function Home() {
   return (
     <>
@@ -27,6 +25,7 @@ export default function Home() {
         overflowX="hidden" // Potentially prevent horizontal scroll
       >
         <Navbar />
+
         <TopCta />
 
         <StatsGridWithImage />
