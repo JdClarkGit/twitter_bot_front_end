@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-"use strict";
+// "use strict";
+"use client";
 
 import logo from "./img/logo.png";
 import Link from "next/link";
@@ -133,7 +134,7 @@ export default function WithSubnavigation() {
             </Flex>
             <Flex display={{ base: "none", md: "flex" }}>
               <Button
-                onClick={() => openSignUp()}
+                onClick={() => openSignIn()}
                 fontSize={"sm"}
                 fontWeight={600}
                 color="white"

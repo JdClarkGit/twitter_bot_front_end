@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs";
+import { ClerkProvider, useAuth } from "@clerk/nextjs";
 import AuthProvider from "@/providers/AuthProvider";
 import { Providers } from "../providers/providers";
 
@@ -17,11 +16,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { userId } = auth();
+  const { userId } = useAuth();
 
   return (
     <ClerkProvider>
-      <AuthProvider userId={String(userId) as string}>
+      <AuthProvider userId={userId ? String(userId) : ""}>
         <Providers>
           <div className={inter.className}>{children}</div>
         </Providers>
