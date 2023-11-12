@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,6 +34,9 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 
+import { useUser } from "@clerk/nextjs";
+import { AuthContext } from "@/providers/AuthContext";
+
 export default function DashboardPage() {
   const [inputValue, setInputValue] = useState("");
   const menuItems = [
@@ -44,6 +47,13 @@ export default function DashboardPage() {
     { alt: "", icon: faCog, href: "/settings" },
     { alt: "", icon: faSignOutAlt, href: "/" },
   ];
+
+  const user = useUser();
+  const userId = useContext(AuthContext);
+
+  console.log(userId);
+
+  console.log(user?.user);
 
   return (
     <Flex
@@ -118,8 +128,8 @@ export default function DashboardPage() {
         {/* Header Area */}
         <Flex justifyContent="space-between" alignItems="center" mb={4}>
           <Heading as="h2" size="md" color="white" textAlign="center">
-            Hello 👋! Welcome to tour dashboard. Let's leverage AI to grow your
-            brand, without the hassle.
+            Hello {user?.user?.firstName} 👋! Welcome to tour dashboard. Let's
+            leverage AI to grow your brand, without the hassle.
           </Heading>
           <Box>
             <Button variant="ghost" mr={3}>

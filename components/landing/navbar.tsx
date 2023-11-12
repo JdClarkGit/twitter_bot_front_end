@@ -42,6 +42,9 @@ import { useContext } from "react";
 import { AuthContext } from "@/providers/AuthContext";
 import EasyAI from "@/assets/images/easy-ai.png";
 import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -49,6 +52,26 @@ export default function WithSubnavigation() {
   // JOSEPH: STEAL THIS FOR ANY USER ID CONDITIONAL RENDERING
   const userId = useContext<any>(AuthContext);
   console.log(userId);
+
+  const { signOut } = useClerk();
+
+  const router = useRouter();
+
+  function handleRoutingForDashbaordButton() {
+    if (userId) {
+      router.push("/dashboard");
+    } else {
+      router.push("/sign-up");
+    }
+  }
+
+  function handleRoutingForLoginButton() {
+    if (userId) {
+      signOut();
+    } else {
+      router.push("/sign-in");
+    }
+  }
 
   return (
     <Box
@@ -103,30 +126,28 @@ export default function WithSubnavigation() {
           direction={"row"}
           spacing={6}
         >
-          <SignInButton afterSignInUrl="/dashboard">
-            <Button
-              as={"a"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              color="white"
-            >
-              Log In
-            </Button>
-          </SignInButton>
-          <SignUpButton afterSignUpUrl={"/dashboard"}>
-            <Button
-              as={"a"}
-              display={{ base: "none", md: "inline-flex" }}
-              fontSize={"sm"}
-              fontWeight={600}
-              color={"white"}
-              colorScheme="twitter"
-              cursor="pointer"
-            >
-              {userId ? "Dashboard" : "Sign Up"}
-            </Button>
-          </SignUpButton>
+          <Button
+            onClick={() => handleRoutingForLoginButton()}
+            as={"a"}
+            fontSize={"sm"}
+            fontWeight={400}
+            variant={"link"}
+            color="white"
+          >
+            {userId ? "Sign Out" : "Log In"}
+          </Button>
+          <Button
+            as={"a"}
+            onClick={() => handleRoutingForDashbaordButton()}
+            display={{ base: "none", md: "inline-flex" }}
+            fontSize={"sm"}
+            fontWeight={600}
+            color={"white"}
+            colorScheme="twitter"
+            cursor="pointer"
+          >
+            {userId ? "Dashboard" : "Sign Up"}
+          </Button>
         </Stack>
       </Flex>
       <Collapse in={isOpen} animateOpacity>
