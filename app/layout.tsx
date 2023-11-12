@@ -10,23 +10,27 @@ export const metadata: Metadata = {
 };
 
 import { CSSReset } from "@chakra-ui/react";
+import { auth } from "@clerk/nextjs";
+import AuthProvider from "@/providers/AuthProvider";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { userId } = auth();
+
   return (
     /* TODO: for code cleanliness purposes, ClerkProvider should live inside of providers.tsx,
     but when we do that, we get a "`NextRouter` was not mounted" error */
     <ClerkProvider>
-      <html lang="en">
-        <body className={inter.className}>
-          <Providers>
-            {children}
-          </Providers>
-        </body>
-      </html>
+      <AuthProvider userId={userId as string}>
+        <html lang="en">
+          <body className={inter.className}>
+            <Providers>{children}</Providers>
+          </body>
+        </html>
+      </AuthProvider>
     </ClerkProvider>
   );
 }
