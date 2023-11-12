@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 "use strict";
 
 import {
@@ -37,8 +38,17 @@ import {
   useClerk,
 } from "@clerk/nextjs";
 
+import { useContext } from "react";
+import { AuthContext } from "@/providers/AuthContext";
+import EasyAI from "@/assets/images/easy-ai.png";
+import Image from "next/image";
+
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+
+  // JOSEPH: STEAL THIS FOR ANY USER ID CONDITIONAL RENDERING
+  const userId = useContext<any>(AuthContext);
+  console.log(userId);
 
   return (
     <Box
@@ -79,7 +89,7 @@ export default function WithSubnavigation() {
             color={"white"}
             fontSize="3xl"
           >
-            EasyEngage.ai
+            <Image src={EasyAI} width={190} height={190} alt="Image" />
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -104,7 +114,7 @@ export default function WithSubnavigation() {
               Log In
             </Button>
           </SignInButton>
-          <SignUpButton afterSignUpUrl={"/my-dashboard"}>
+          <SignUpButton afterSignUpUrl={"/dashboard"}>
             <Button
               as={"a"}
               display={{ base: "none", md: "inline-flex" }}
@@ -114,12 +124,11 @@ export default function WithSubnavigation() {
               colorScheme="twitter"
               cursor="pointer"
             >
-              Sign Up
+              {userId ? "Dashboard" : "Sign Up"}
             </Button>
           </SignUpButton>
         </Stack>
       </Flex>
-
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
