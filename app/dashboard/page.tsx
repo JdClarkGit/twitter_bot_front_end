@@ -39,6 +39,7 @@ import { AuthContext } from "@/providers/AuthContext";
 
 export default function DashboardPage() {
   const [inputValue, setInputValue] = useState("");
+
   const menuItems = [
     { alt: "", icon: faHome, href: null },
     { alt: "", icon: faPlus, href: "/create" },

@@ -42,9 +42,7 @@ import { useContext } from "react";
 import { AuthContext } from "@/providers/AuthContext";
 import EasyAI from "@/assets/images/easy-ai.png";
 import Image from "next/image";
-import { UserButton } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import { useUser } from "@clerk/nextjs";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
